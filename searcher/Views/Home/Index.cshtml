@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+@using (Html.BeginForm())
+{
+    <p>
+        Find: @Html.TextBox("searchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+</div>
