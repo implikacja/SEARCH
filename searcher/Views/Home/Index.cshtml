@@ -21,8 +21,8 @@
             @foreach (var item in Model)
             {
                 <tr>
-                        @Html.DisplayFor(modelItem => item.title)
-                        @Html.DisplayFor(modelItem => item.keywords)
+                    <td> @Html.DisplayFor(modelItem => item.title) </td>
+                    <td> @Html.DisplayFor(modelItem => item.description) </td>
                 </tr>
 
             }

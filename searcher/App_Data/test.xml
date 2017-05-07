@@ -1,0 +1,884 @@
+<?xml version="1.0"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2017//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_170101.dtd">
+<PubmedArticleSet>
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">22495354</PMID>
+        <DateCreated>
+            <Year>2012</Year>
+            <Month>10</Month>
+            <Day>22</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>2013</Year>
+            <Month>04</Month>
+            <Day>18</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2015</Year>
+            <Month>11</Month>
+            <Day>19</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1873-734X</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>42</Volume>
+                    <Issue>5</Issue>
+                    <PubDate>
+                        <Year>2012</Year>
+                        <Month>Nov</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>European journal of cardio-thoracic surgery : official journal of the European Association for Cardio-thoracic Surgery</Title>
+                <ISOAbbreviation>Eur J Cardiothorac Surg</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>1,25-Dihydroxycholecalciferol with low-calcium diet reduces acute rejection in rat lung allotransplantation.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>871-7</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1093/ejcts/ezs150</ELocationID>
+            <Abstract>
+                <AbstractText Label="OBJECTIVES" NlmCategory="OBJECTIVE">The effect of 1,25-dihydroxycholecalciferol (calcitriol, vitamin D3) with a low-calcium diet on the acute lung allograft rejection in a rat unilateral left lung transplantation model was evaluated.</AbstractText>
+                <AbstractText Label="METHODS" NlmCategory="METHODS">Three transplantation groups were studied (n = 5, male Brown-Norway to Fischer F344, 235 ± 15 g body weight): calcitriol and low-calcium diet, low-calcium diet and normal diet. Calcitriol (4 μg/kg/day) was injected intraperitoneally for 5 days, starting from the day of transplantation. In addition, two non-transplantation groups were compared: (n = 3, Brown-Norway) to measure the level of cytokines, and Fischer F344 receiving calcitriol and a low-calcium diet to measure the serum calcium level. The recipients of transplantation were killed on Day 5 post-transplant. The contralateral right main bronchus and the pulmonary artery were occluded for 5 min and blood was drawn for the blood gas analysis, and the grafts were assessed for histology (International Society for Heart and Lung Transplantation 1996/rank scale). Lung levels of interleukin (IL)-2, IL-6, IL-12 and tumour necrosis factor-α (TNF-α) were assessed within the calcitriol and low-calcium diet, low-calcium diet and Brown-Norway groups. The serum calcium level was assessed in the Fischer F344 group. An analysis of variance with Tukey's post hoc test was used to compare the arterial blood oxygen pressure and the lung cytokine expression between groups. A non-parametric Kruskal-Wallis test followed by the Siegel and Castellan post hoc test was used to assess the differences between the groups according to the lung graft rejection grading. Student's paired t-test was used to compare the serum calcium level.</AbstractText>
+                <AbstractText Label="RESULTS" NlmCategory="RESULTS">The arterial PaO(2) was significantly higher in the calcitriol and the low-calcium diet groups when compared with low-calcium diet or normal diet groups (356 ± 72 mmHg; P &lt; 0.05 vs other groups). The arterial and bronchial rejection observed in calcitriol and low-calcium diet group was significantly milder than in the low-calcium diet or normal diet groups (A1-2, B1-2; P &lt; 0.05 vs other groups). IL-2 and IL-6 levels were significantly higher in low-calcium diet vs calcitriol and low-calcium diet and Brown-Norway groups. IL-12 and TNF-α did not differ among the groups. There was no significant difference in serum calcium level before and after the treatment in the Fischer F344 group.</AbstractText>
+                <AbstractText Label="CONCLUSIONS" NlmCategory="CONCLUSIONS">Calcitriol with a low-calcium diet treatment improves lung function, reduces lung allograft acute rejection, decreases IL-2 and IL-6 allograft expression and does not change the serum calcium level significantly.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Kubisa</LastName>
+                    <ForeName>Bartosz</ForeName>
+                    <Initials>B</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Division of General Thoracic Surgery, University Hospital, Berne, Switzerland. abkubisa@hotmail.com</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Stammberger</LastName>
+                    <ForeName>Uz</ForeName>
+                    <Initials>U</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gugger</LastName>
+                    <ForeName>Mathias</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Uduehi</LastName>
+                    <ForeName>Aima Norma</ForeName>
+                    <Initials>AN</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Grodzki</LastName>
+                    <ForeName>Tomasz</ForeName>
+                    <Initials>T</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Schmid</LastName>
+                    <ForeName>Ralph Alexander</ForeName>
+                    <Initials>RA</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D023362">Evaluation Studies</PublicationType>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2012</Year>
+                <Month>04</Month>
+                <Day>11</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>Germany</Country>
+            <MedlineTA>Eur J Cardiothorac Surg</MedlineTA>
+            <NlmUniqueID>8804069</NlmUniqueID>
+            <ISSNLinking>1010-7940</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D015415">Biomarkers</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D002136">Calcium, Dietary</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D016207">Cytokines</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D014815">Vitamins</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>FXC9231JVH</RegistryNumber>
+                <NameOfSubstance UI="D002117">Calcitriol</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>S88TT14065</RegistryNumber>
+                <NameOfSubstance UI="D010100">Oxygen</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>SY7Q814VUP</RegistryNumber>
+                <NameOfSubstance UI="D002118">Calcium</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000208" MajorTopicYN="N">Acute Disease</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D015415" MajorTopicYN="N">Biomarkers</DescriptorName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D001784" MajorTopicYN="N">Blood Gas Analysis</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002117" MajorTopicYN="N">Calcitriol</DescriptorName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002118" MajorTopicYN="N">Calcium</DescriptorName>
+                <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+                <QualifierName UI="Q000172" MajorTopicYN="Y">deficiency</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002136" MajorTopicYN="Y">Calcium, Dietary</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016207" MajorTopicYN="N">Cytokines</DescriptorName>
+                <QualifierName UI="Q000378" MajorTopicYN="N">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D004032" MajorTopicYN="Y">Diet</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D004334" MajorTopicYN="N">Drug Administration Schedule</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006084" MajorTopicYN="N">Graft Rejection</DescriptorName>
+                <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+                <QualifierName UI="Q000276" MajorTopicYN="N">immunology</QualifierName>
+                <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+                <QualifierName UI="Q000517" MajorTopicYN="Y">prevention &amp; control</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D007274" MajorTopicYN="N">Injections, Intraperitoneal</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008168" MajorTopicYN="N">Lung</DescriptorName>
+                <QualifierName UI="Q000276" MajorTopicYN="N">immunology</QualifierName>
+                <QualifierName UI="Q000473" MajorTopicYN="N">pathology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016040" MajorTopicYN="N">Lung Transplantation</DescriptorName>
+                <QualifierName UI="Q000276" MajorTopicYN="Y">immunology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D010100" MajorTopicYN="N">Oxygen</DescriptorName>
+                <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D051381" MajorTopicYN="N">Rats</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011916" MajorTopicYN="N">Rats, Inbred F344</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D016896" MajorTopicYN="N">Treatment Outcome</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D014815" MajorTopicYN="N">Vitamins</DescriptorName>
+                <QualifierName UI="Q000627" MajorTopicYN="Y">therapeutic use</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2012</Year>
+                <Month>4</Month>
+                <Day>13</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2012</Year>
+                <Month>4</Month>
+                <Day>13</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2013</Year>
+                <Month>4</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">22495354</ArticleId>
+            <ArticleId IdType="pii">ezs150</ArticleId>
+            <ArticleId IdType="doi">10.1093/ejcts/ezs150</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">7807703</PMID>
+        <DateCreated>
+            <Year>1995</Year>
+            <Month>01</Month>
+            <Day>31</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>1995</Year>
+            <Month>01</Month>
+            <Day>31</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2013</Year>
+            <Month>11</Month>
+            <Day>21</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0021-5082</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>49</Volume>
+                    <Issue>4</Issue>
+                    <PubDate>
+                        <Year>1994</Year>
+                        <Month>Oct</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Nihon eiseigaku zasshi. Japanese journal of hygiene</Title>
+                <ISOAbbreviation>Nihon Eiseigaku Zasshi</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>[A 10-year field surveillance in Hinohara Village of Tokyo Prefecture from 1981 to 1990].</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>762-72</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>We conducted a surveillance to clarify the relationship between risk factors for diseases of adulthood and lifestyle in a Japanese rural community, Hinohara Village, a small village outside of Tokyo. The survey, carried out from 1981 to 1990 among residents aged 40 and over, comprised physical examination and blood chemistry with a questionnaire about dietary intake. Mean systolic blood pressure significantly decreased (p &lt; 0.0001) from 140.9 mmHg in 1981 to 132.3 mmHg in 1990, whereas mean serum total cholesterol, mainly of male examinees, increased (p &lt; 0.0001) from 181.4 mg/dl in 1981 to 191.7 mg/dl in 1990. Dietary salt intake significantly decreased (p &lt; 0.0001) from 14.3 g/day in 1981 to 12.1 g/day in 1990. Adjusted mortality rate per 1,000 residents from cerebrovascular disease in this village decreased from 1.80 in 1981 to 0.50 in 1990. In contrast to its decline, the mortality rates from heart disease, bronchitis/pneumonia and neoplasms were 0.40, 0.35 and 0.55 in 1981 and increased to 1.25, 1.10 and 0.64 in 1990. The prevailing practice of maintaining a low-salt diet might cause the decrease of systolic blood pressure, which in turn was thought to decrease the mortality rate from cerebrovascular diseases. Although our previous study before 1981 suggested that total cholesterol was one of the preventive factors against cerebrovascular disease, in the present study a preventive effect of cholesterol was not substantiated. In contrast, cholesterol is a possible risk factor for ischemic heart disease. Thus, a changing pattern of risk factors of diseases of adulthood was observed in this village.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Kaneko</LastName>
+                    <ForeName>A</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Department of Internal Medicine, Tachikawa Hospital, Japan.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kimura</LastName>
+                    <ForeName>T</ForeName>
+                    <Initials>T</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Mori</LastName>
+                    <ForeName>K</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Tsunoda</LastName>
+                    <ForeName>T</ForeName>
+                    <Initials>T</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Furumi</LastName>
+                    <ForeName>K</ForeName>
+                    <Initials>K</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Uchida</LastName>
+                    <ForeName>M</ForeName>
+                    <Initials>M</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Watabe</LastName>
+                    <ForeName>A</ForeName>
+                    <Initials>A</Initials>
+                </Author>
+            </AuthorList>
+            <Language>jpn</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D004740">English Abstract</PublicationType>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>Japan</Country>
+            <MedlineTA>Nihon Eiseigaku Zasshi</MedlineTA>
+            <NlmUniqueID>0417457</NlmUniqueID>
+            <ISSNLinking>0021-5082</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D012982">Sodium, Dietary</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>97C5T2UQ7J</RegistryNumber>
+                <NameOfSubstance UI="D002784">Cholesterol</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D000328" MajorTopicYN="N">Adult</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000368" MajorTopicYN="N">Aged</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000369" MajorTopicYN="N">Aged, 80 and over</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002318" MajorTopicYN="N">Cardiovascular Diseases</DescriptorName>
+                <QualifierName UI="Q000401" MajorTopicYN="Y">mortality</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002561" MajorTopicYN="N">Cerebrovascular Disorders</DescriptorName>
+                <QualifierName UI="Q000401" MajorTopicYN="Y">mortality</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D002784" MajorTopicYN="N">Cholesterol</DescriptorName>
+                <QualifierName UI="Q000097" MajorTopicYN="N">blood</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008019" MajorTopicYN="N">Life Style</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008875" MajorTopicYN="N">Middle Aged</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012307" MajorTopicYN="N">Risk Factors</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D012982" MajorTopicYN="N">Sodium, Dietary</DescriptorName>
+                <QualifierName UI="Q000008" MajorTopicYN="N">administration &amp; dosage</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D014041" MajorTopicYN="N" Type="Geographic">Tokyo</DescriptorName>
+                <QualifierName UI="Q000453" MajorTopicYN="N">epidemiology</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>1994</Year>
+                <Month>10</Month>
+                <Day>1</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>1994</Year>
+                <Month>10</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>1994</Year>
+                <Month>10</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">7807703</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">9511269</PMID>
+        <DateCreated>
+            <Year>1998</Year>
+            <Month>04</Month>
+            <Day>09</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>1998</Year>
+            <Month>04</Month>
+            <Day>09</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2006</Year>
+            <Month>11</Month>
+            <Day>15</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0008-7335</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>137</Volume>
+                    <Issue>1</Issue>
+                    <PubDate>
+                        <Year>1998</Year>
+                        <Month>Jan</Month>
+                        <Day>12</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Casopis lekaru ceskych</Title>
+                <ISOAbbreviation>Cas. Lek. Cesk.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>[100 years of hypertension].</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>3-7</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>At the opportunity of the 100th anniversary of S. Riva-Rocci's publications on the new sphygmomanometer the author presents a review of the main publications which made this method possible and a review of clinical and pathological studies which led to the recognition of essential hypertension (EHT). He also mentions main adopted criteria of hypertension and draws attention to the difficulties associated with a definition and classification of EHT because of the variations in pressure and differences of &quot;normal&quot; values in various populations. From multicentre intervention studies precise and generally valid criteria for individual treatment cannot be derived. As to recent of work on the pathogenesis of EHT the author draws attention to the importance of endothelin and NO (EDRF), which play a part in the genesis of changes in the vascular wall in atheromatosis and also in hypertension. A new discovery is the bond between NO and haemoglobin (S-nitrosohaemoglobin). In addition to proved and located genetic factors also external factors are involved, in particular psychosocial factors, diet, body weight, smoking etc. on which prevention and treatment must be focused. Medicamentous treatment markedly improves the prognosis of hypertension. Antihypertensive drugs from all main groups of drugs are used. Dosage still remains an open question which cannot be resolved completely on the basis of intervention trials. ACE-inhibitors hold an important place--they reduce the blood pressure and also prevent progression of left ventricular hypertrophy. Beta-blockers and diuretics still remain the basis of first line treatment. Among Ca-inhibitor, preparation with long-term action are preferred. Open questions include--apart from dosage--the comparison of the efficacy/side effects ratio of new effective drugs (A I, A II, renin) and older antihypertensive drugs when used on a long-term basis; furthermore the justification to administer vasodilatating drugs as monotherapy and in combinations during long-term treatment with regard to the activation of the sympathetic nerve and risk of hypotension. The author discusses the sympathetic activation to which BP should be reduced and thus also the question of doses reduction and discontinuation of the drug--in particular in old patients. And finally, the role of hypertension as the sole cause of increased mortality (EEHT per se) must be proved. In practice the problems of the detection rate, adherence, information and correct treatment are of major importance.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Jerie</LastName>
+                    <ForeName>P</ForeName>
+                    <Initials>P</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Rehaklinik-Rehabilitacní centrum, kardiologická ambulance, Rheinfelden, Svýcarsko.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>cze</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D004740">English Abstract</PublicationType>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D016454">Review</PublicationType>
+            </PublicationTypeList>
+            <VernacularTitle>Sto let hypertenze.</VernacularTitle>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>Czech Republic</Country>
+            <MedlineTA>Cas Lek Cesk</MedlineTA>
+            <NlmUniqueID>0004743</NlmUniqueID>
+            <ISSNLinking>0008-7335</ISSNLinking>
+        </MedlineJournalInfo>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006973" MajorTopicYN="Y">Hypertension</DescriptorName>
+                <QualifierName UI="Q000175" MajorTopicYN="N">diagnosis</QualifierName>
+                <QualifierName UI="Q000503" MajorTopicYN="N">physiopathology</QualifierName>
+                <QualifierName UI="Q000628" MajorTopicYN="N">therapy</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <NumberOfReferences>50</NumberOfReferences>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>1998</Year>
+                <Month>3</Month>
+                <Day>25</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>1998</Year>
+                <Month>3</Month>
+                <Day>25</Day>
+                <Hour>0</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>1998</Year>
+                <Month>3</Month>
+                <Day>25</Day>
+                <Hour>0</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">9511269</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">8733012</PMID>
+        <DateCreated>
+            <Year>1996</Year>
+            <Month>11</Month>
+            <Day>27</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>1996</Year>
+            <Month>11</Month>
+            <Day>27</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2005</Year>
+            <Month>11</Month>
+            <Day>16</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0039-128X</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>61</Volume>
+                    <Issue>4</Issue>
+                    <PubDate>
+                        <Year>1996</Year>
+                        <Month>Apr</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Steroids</Title>
+                <ISOAbbreviation>Steroids</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>11 beta-Hydroxysteroid dehydrogenases: key enzymes in determining tissue-specific glucocorticoid effects.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>263-9</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>Recent studies have demonstrated that the interconversion of active and inactive glucocorticoids plays a key role in determining the specificity of the mineralocorticoid receptor and controlling local tissue glucocorticoid receptor activation. Two distinct isoforms of the enzyme 11 beta-hydroxysteroid dehydrogenase (11 beta-HSD) have been identified. 11 beta-HSD1 is NADPH-dependent and at its major site of action (the liver) is a reductase, converting cortisone to cortisol (11-dehydrocorticosterone to corticosterone in the rat). 11 beta-HSD2 is NAD-dependent, is present in tissues such as the kidney and placenta, and converts cortisol to cortisone (corticosterone to 11-dehydrocorticosterone in the rat). Congenital or acquired deficiency of 11 beta-HSD2 produces the syndrome of apparent mineralocorticoid excess (SAME) in which cortisol gains access to the unprotected nonspecific mineralocorticoid receptor. The congenital deficiency is associated with mutations in the gene encoding the kidney isoform of 11 beta-HSD2; the acquired form results from inhibition of the enzyme by licorice, carbenoxolone, ACTH-dependent steroids in the ectopic ACTH syndrome, and possibly circulating inhibitors of the enzyme. This paper focuses on recent evidence, which suggest that low levels of placental 11 beta-HSD2 result in increased exposure of the fetus to maternal glucocorticoid and low birth weight. In animal studies using the rat we have shown that birth weight is correlated positively and placental weight negatively with the level of placental 11 beta-HSD. Thus animals with low birth weight and large placentae were those likely to be exposed to the highest level of maternal glucocorticoid. In man a similar relationship was found with birth weight being significantly correlated either with placental 11 beta-HSD activity or with the extent of cortisol inactivation by isolated perfused placental cotyledons. Administration of dexamethasone (which is poorly metabolized by placental 11 beta-HSD2) to pregnant rats resulted in decreased birth weight and the development of hypertension in the pups when adult. The same results were obtained when pregnant rats were given carbenoxolone, an inhibitor of placental 11 beta-HSD2. Low protein diet during pregnancy in the rat resulted in low birth weight of the pups, increased placental weight but decreased placental 11 beta-HSD activity, and adult hypertension. Thus increased glucocorticoid exposure of the fetus secondary to a failure of the normal inactivation of maternal glucocorticoid by the placental may be an important mechanism linking changes in the in utero environment and common adult diseases.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Edwards</LastName>
+                    <ForeName>C R</ForeName>
+                    <Initials>CR</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Imperial College School of Medicine, Imperial College, London, United Kingdom.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Benediktsson</LastName>
+                    <ForeName>R</ForeName>
+                    <Initials>R</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Lindsay</LastName>
+                    <ForeName>R S</ForeName>
+                    <Initials>RS</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Seckl</LastName>
+                    <ForeName>J R</ForeName>
+                    <Initials>JR</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D016454">Review</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Steroids</MedlineTA>
+            <NlmUniqueID>0404536</NlmUniqueID>
+            <ISSNLinking>0039-128X</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D005938">Glucocorticoids</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>EC 1.1.-</RegistryNumber>
+                <NameOfSubstance UI="D006913">Hydroxysteroid Dehydrogenases</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>EC 1.1.1.146</RegistryNumber>
+                <NameOfSubstance UI="D042842">11-beta-Hydroxysteroid Dehydrogenases</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D042842" MajorTopicYN="N">11-beta-Hydroxysteroid Dehydrogenases</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D001724" MajorTopicYN="N">Birth Weight</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D001794" MajorTopicYN="N">Blood Pressure</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D003327" MajorTopicYN="N">Coronary Disease</DescriptorName>
+                <QualifierName UI="Q000453" MajorTopicYN="N">epidemiology</QualifierName>
+                <QualifierName UI="Q000209" MajorTopicYN="N">etiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D004032" MajorTopicYN="N">Diet</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005260" MajorTopicYN="N">Female</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D005938" MajorTopicYN="N">Glucocorticoids</DescriptorName>
+                <QualifierName UI="Q000494" MajorTopicYN="Y">pharmacology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006913" MajorTopicYN="N">Hydroxysteroid Dehydrogenases</DescriptorName>
+                <QualifierName UI="Q000172" MajorTopicYN="Y">deficiency</QualifierName>
+                <QualifierName UI="Q000502" MajorTopicYN="Y">physiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006973" MajorTopicYN="N">Hypertension</DescriptorName>
+                <QualifierName UI="Q000209" MajorTopicYN="N">etiology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D007223" MajorTopicYN="N">Infant</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D007226" MajorTopicYN="N">Infant Mortality</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D009929" MajorTopicYN="N">Organ Size</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D010920" MajorTopicYN="N">Placenta</DescriptorName>
+                <QualifierName UI="Q000201" MajorTopicYN="N">enzymology</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011247" MajorTopicYN="N">Pregnancy</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011297" MajorTopicYN="N">Prenatal Exposure Delayed Effects</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D051381" MajorTopicYN="N">Rats</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D013577" MajorTopicYN="N">Syndrome</DescriptorName>
+            </MeshHeading>
+        </MeshHeadingList>
+        <NumberOfReferences>68</NumberOfReferences>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>1996</Year>
+                <Month>4</Month>
+                <Day>1</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>1996</Year>
+                <Month>4</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>1996</Year>
+                <Month>4</Month>
+                <Day>1</Day>
+                <Hour>0</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">8733012</ArticleId>
+            <ArticleId IdType="pii">0039-128X(96)00033-5</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+        <PMID Version="1">10950402</PMID>
+        <DateCreated>
+            <Year>2001</Year>
+            <Month>02</Month>
+            <Day>02</Day>
+        </DateCreated>
+        <DateCompleted>
+            <Year>2001</Year>
+            <Month>02</Month>
+            <Day>02</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2013</Year>
+            <Month>11</Month>
+            <Day>21</Day>
+        </DateRevised>
+        <Article PubModel="Print">
+            <Journal>
+                <ISSN IssnType="Print">0895-7061</ISSN>
+                <JournalIssue CitedMedium="Print">
+                    <Volume>13</Volume>
+                    <Issue>8</Issue>
+                    <PubDate>
+                        <Year>2000</Year>
+                        <Month>Aug</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>American journal of hypertension</Title>
+                <ISOAbbreviation>Am. J. Hypertens.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>11Beta-hydroxysteroid dehydrogenase activity in spontaneously hypertensive and Dahl rats.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>927-33</MedlinePgn>
+            </Pagination>
+            <Abstract>
+                <AbstractText>The role of the enzyme 11beta-hydroxysteroid dehydrogenase (11betaHSD) in hypertension remains unknown even if it appears that the inappropriately decreased 11betaHSD activity might be involved in a process that leads to high blood pressure. The possible changes of 11betaHSD were therefore investigated in rats with spontaneous or salt-induced hypertension. The adult male rats of the following genotypes were used: spontaneously hypertensive rats (SHR), normotensive Wistar-Kyoto rats (WKY), Dahl salt-sensitive rats fed either a high-salt diet containing 8% NaCl (DS-HS) or low-salt diet containing 0.2% NaCl (DS-LS), and Dahl salt-resistant rats fed the same diets (DR-HS, DR-LS). 11betaHSD was investigated in colon, aorta, renal cortex, and renal medulla and was assessed as percentage conversion of [3H]corticosterone to [3H]11-dehydrocorticosterone in the presence of NAD or NADP. The results demonstrated that genotype exerts a significant effect on 11betaHSD. 11betaHSD activity was significantly increased in colon and renal medulla of SHR compared with WKY rats. No significant differences were observed in renal cortex and aorta. In Dahl rats kept on a low-salt diet, 11betaHSD activity was significantly higher in colon, renal medulla, and cortex of DS-LS than in DR-LS rats but no difference was observed in aorta. The differences disappeared in age-matched DS and DR rats fed the high-salt diet. Increased dietary sodium intake stimulated the activity of 11betaHSD in renal cortex and medulla of DR rats and decreased the activity in colon of DS rats. We conclude that the development of spontaneous and salt-induced hypertension is not associated with decreased activity of 11betaHSD. However, the results showed that salt intake is able to modulate the activity of 11betaHSD and that 11betaHSD in DS and DR rats responds to high dietary salt intake in a different manner.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Pohlová</LastName>
+                    <ForeName>I</ForeName>
+                    <Initials>I</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Institute of Physiology, Czech Academy of Sciences, Prague.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Miksík</LastName>
+                    <ForeName>I</ForeName>
+                    <Initials>I</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kunes</LastName>
+                    <ForeName>J</ForeName>
+                    <Initials>J</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Pácha</LastName>
+                    <ForeName>J</ForeName>
+                    <Initials>J</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D003160">Comparative Study</PublicationType>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+                <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+            </PublicationTypeList>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Am J Hypertens</MedlineTA>
+            <NlmUniqueID>8803676</NlmUniqueID>
+            <ISSNLinking>0895-7061</ISSNLinking>
+        </MedlineJournalInfo>
+        <ChemicalList>
+            <Chemical>
+                <RegistryNumber>0</RegistryNumber>
+                <NameOfSubstance UI="D017673">Sodium Chloride, Dietary</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>EC 1.1.-</RegistryNumber>
+                <NameOfSubstance UI="D006913">Hydroxysteroid Dehydrogenases</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>EC 1.1.1.146</RegistryNumber>
+                <NameOfSubstance UI="D042842">11-beta-Hydroxysteroid Dehydrogenases</NameOfSubstance>
+            </Chemical>
+            <Chemical>
+                <RegistryNumber>W980KJ009P</RegistryNumber>
+                <NameOfSubstance UI="D003345">Corticosterone</NameOfSubstance>
+            </Chemical>
+        </ChemicalList>
+        <CitationSubset>IM</CitationSubset>
+        <MeshHeadingList>
+            <MeshHeading>
+                <DescriptorName UI="D042842" MajorTopicYN="N">11-beta-Hydroxysteroid Dehydrogenases</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D000818" MajorTopicYN="N">Animals</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D003345" MajorTopicYN="N">Corticosterone</DescriptorName>
+                <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D006913" MajorTopicYN="N">Hydroxysteroid Dehydrogenases</DescriptorName>
+                <QualifierName UI="Q000378" MajorTopicYN="Y">metabolism</QualifierName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D008297" MajorTopicYN="N">Male</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D051381" MajorTopicYN="N">Rats</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D020303" MajorTopicYN="N">Rats, Inbred Dahl</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D011918" MajorTopicYN="N">Rats, Inbred SHR</DescriptorName>
+            </MeshHeading>
+            <MeshHeading>
+                <DescriptorName UI="D017673" MajorTopicYN="N">Sodium Chloride, Dietary</DescriptorName>
+                <QualifierName UI="Q000494" MajorTopicYN="N">pharmacology</QualifierName>
+            </MeshHeading>
+        </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2000</Year>
+                <Month>8</Month>
+                <Day>19</Day>
+                <Hour>11</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2001</Year>
+                <Month>3</Month>
+                <Day>3</Day>
+                <Hour>10</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2000</Year>
+                <Month>8</Month>
+                <Day>19</Day>
+                <Hour>11</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">10950402</ArticleId>
+            <ArticleId IdType="pii">S0895-7061(00)00257-0</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+
+</PubmedArticleSet>

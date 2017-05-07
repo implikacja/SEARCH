@@ -8,11 +8,18 @@ namespace searcher.Models
 {
     public class Article
     {
-        public String title;
-        public String keywords;
+        public string title;
+        public string description;
+        public string keywords;
         public float TF;
         public float relevance;
-        public Article(String title, String keywords)
+
+        public Article() 
+        {
+
+        }
+
+        public Article(string title, string keywords)
         {
             this.title = title;
             this.keywords = keywords;

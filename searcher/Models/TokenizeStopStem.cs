@@ -14,10 +14,12 @@ namespace searcher.Models
     class TokenizeStopStem
     {
         public String input;
+
         public TokenizeStopStem(String input)
         {
-        this.input = input;
+            this.input = input;
         }
+
         public String tokenization()
         {
             List<String> result = new List<String>();
