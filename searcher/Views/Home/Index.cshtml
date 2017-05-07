@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<searcher.Models.Article>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -14,4 +15,18 @@
         Query: @ViewBag.Message
     </p>
 }
+    @if (Model != null)
+    {
+        <table class="table">
+            @foreach (var item in Model)
+            {
+                <tr>
+                        @Html.DisplayFor(modelItem => item.title)
+                        @Html.DisplayFor(modelItem => item.keywords)
+                </tr>
+
+            }
+        </table>
+    }
+
 </div>

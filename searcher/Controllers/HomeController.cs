@@ -1,5 +1,6 @@
 ﻿using searcher.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,9 @@ namespace searcher.Controllers
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
                 String result = t.tokenization();
                 ViewBag.Message = result;
+                UseXML x = new UseXML(result);
+                List<Article> articles = x.doList();
+                return View(articles);
             }
             return View();
         }
