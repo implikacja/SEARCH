@@ -1,4 +1,5 @@
-﻿using System;
+﻿using searcher.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,7 +13,9 @@ namespace searcher.Controllers
         {
             if (!String.IsNullOrEmpty(searchString))
             {
-                
+                TokenizeStopStem t = new TokenizeStopStem(searchString);
+                String result = t.tokenization();
+                ViewBag.Message = result;
             }
             return View();
         }
