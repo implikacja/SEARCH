@@ -6,23 +6,28 @@ using System.Threading.Tasks;
 
 namespace searcher.Models
 {
+
     public class Article
     {
         public string title;
         public string description;
-        public string keywords;
+        public DateTime date;
         public float TF;
         public float relevance;
+        public Author[] authors;
 
         public Article() 
         {
 
         }
 
-        public Article(string title, string keywords)
-        {
-            this.title = title;
-            this.keywords = keywords;
+        public string getAuthorsList() {
+            string auth = "";
+
+            foreach (Author a in authors)
+                auth += a.firstName + " " + a.lastName + Environment.NewLine + Environment.NewLine;
+
+            return auth;
         }
     }
 }

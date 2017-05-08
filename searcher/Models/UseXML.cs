@@ -30,7 +30,19 @@ namespace searcher.Models
                     select new Article 
                     {
                         title = (string)a.Element("MedlineCitation").Element("Article").Element("ArticleTitle"),
-                        description = (string)a.Element("MedlineCitation").Element("Article").Element("Abstract")
+                        description = (string)a.Element("MedlineCitation").Element("Article").Element("Abstract"),
+                        date = new DateTime((Int32)a.Element("MedlineCitation").Element("DateCreated").Element("Year"),
+                                            (Int32)a.Element("MedlineCitation").Element("DateCreated").Element("Month"),
+                                            (Int32)a.Element("MedlineCitation").Element("DateCreated").Element("Day")),
+                        authors =
+                        (
+                            from auth in a.Element("MedlineCitation").Element("Article").Element("AuthorList").Elements("Author")
+                            select new Author 
+                            {
+                                firstName = (string)auth.Element("ForeName"),
+                                lastName = (string)auth.Element("LastName")
+                            }
+                        ).ToArray()
                     }
 
                 ).ToList();
