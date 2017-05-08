@@ -12,7 +12,8 @@ namespace searcher.Models
         public string title;
         public string description;
         public DateTime date;
-        public float[] termsFrequencies;
+        public double[] TF;
+        public double[] TF_IDF;
         public float relevance;
         public Author[] authors;
 
@@ -30,8 +31,12 @@ namespace searcher.Models
             return auth;
         }
 
-        public string getTermsFrequenciesList() {
-            return String.Join(", ", termsFrequencies);
+        public string getTFList() {
+            return String.Join(", ", TF);
+        }
+
+        public string getTF_IDFList() {
+            return String.Join(", ", TF_IDF);
         }
     }
 }

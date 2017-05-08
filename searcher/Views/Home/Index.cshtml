@@ -25,7 +25,8 @@
                     <td> @MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />")) </td>
                     <td> @Html.DisplayFor(modelItem => item.title) </td>
                     <td> @Html.DisplayFor(modelItem => item.description) </td>
-                    <td> @item.getTermsFrequenciesList() </td>
+                    <td> @item.getTFList() </td>
+                    <td> @item.getTF_IDFList() </td>
                 </tr>
 
             }

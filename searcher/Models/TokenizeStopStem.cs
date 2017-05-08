@@ -41,9 +41,9 @@ namespace searcher.Models
             return tokens;
         }
 
-        public float[] countTermsFrequencies(List<string> searchWords) {
+        public double[] countTermsFrequencies(List<string> searchWords) {
             int numOfSearchWords = searchWords.Count;
-            float[] tf = new float[numOfSearchWords];
+            double[] tf = new double[numOfSearchWords];
 
             for (int i = 0; i < numOfSearchWords; i++)
                 tf[i] = 0f;
@@ -55,11 +55,11 @@ namespace searcher.Models
                 }
             }
 
-            float maxTF = tf.Max();
+            double maxTF = tf.Max();
 
             if (maxTF != 0)
                 for (int i = 0; i < numOfSearchWords; i++)
-                    tf[i] /= maxTF;
+                    tf[i] /= maxTF; // tokens.Count;
 
             return tf;
         }
