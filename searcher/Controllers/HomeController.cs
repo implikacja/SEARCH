@@ -15,10 +15,12 @@ namespace searcher.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
-                String result = t.tokenization();
+                t.tokenize();
+                string result = t.getTokensList();
+                //String result = t.tokenization();
                 ViewBag.Message = result;
                 UseXML x = new UseXML(result);
-                List<Article> articles = x.doList();
+                List<Article> articles = x.doList(t.getTokens());
                 return View(articles);
             }
             return View();

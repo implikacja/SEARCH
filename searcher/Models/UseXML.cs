@@ -22,7 +22,7 @@ namespace searcher.Models
             this.input = input;
         }
 
-        public List<Article> doList()
+        public List<Article> doList(List<string> searchWords)
         {
             List<Article> articles =
                 (
@@ -47,8 +47,19 @@ namespace searcher.Models
 
                 ).ToList();
 
+            foreach (Article art in articles) {
+                countTermsFrequencies(art, searchWords);
+            }
 
             return articles;
         }
+
+        private void countTermsFrequencies(Article article, List<string> searchWords) {
+            TokenizeStopStem t = new TokenizeStopStem(article.description);
+            t.tokenize();
+
+            article.termsFrequencies = t.countTermsFrequencies(searchWords);
+        }
+
     }
 }

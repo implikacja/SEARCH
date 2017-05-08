@@ -12,7 +12,7 @@ namespace searcher.Models
         public string title;
         public string description;
         public DateTime date;
-        public float TF;
+        public float[] termsFrequencies;
         public float relevance;
         public Author[] authors;
 
@@ -28,6 +28,10 @@ namespace searcher.Models
                 auth += a.firstName + " " + a.lastName + Environment.NewLine + Environment.NewLine;
 
             return auth;
+        }
+
+        public string getTermsFrequenciesList() {
+            return String.Join(", ", termsFrequencies);
         }
     }
 }
