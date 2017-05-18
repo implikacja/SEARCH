@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Script.Serialization;
 using System.Xml.Linq;
 
 namespace searcher.Models
@@ -13,6 +14,7 @@ namespace searcher.Models
     {
         XDocument xdoc;
         String input;
+        Dictionary<String, int> dictionary;
 
         public UseXML(String input)
         {
@@ -85,12 +87,50 @@ namespace searcher.Models
             return articles;
         }
 
-        private void countTermsFrequencies(Article article, List<string> searchWords) {
+        private void countTermsFrequencies(Article article, List<string> searchWords)
+        {
             TokenizeStopStem t = new TokenizeStopStem(article.description);
             t.tokenize();
 
             article.TF = t.countTermsFrequencies(searchWords);
         }
+
+        public void buildDictionary(Article article)
+        {
+            if(dictionary == null)
+                dictionary = new Dictionary<string, int>();
+            TokenizeStopStem t = new TokenizeStopStem(article.description);
+            t.tokenize();
+            List<String> tokens = t.getTokens();
+            foreach(String token in tokens)
+            {
+                if (dictionary.ContainsKey(token))
+                {
+                    dictionary[token]++;
+                }
+                else
+                {
+                    dictionary.Add(token, 1);
+                }
+            }
+            
+        }
+
+        public void saveDictionary()
+        {
+            var serializer = new JavaScriptSerializer();
+            var json = serializer.Serialize(dictionary);
+            var path = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, @"App_Data\dictionary.json");
+            File.WriteAllText(path, json);
+        }
+
+        public void loadDictionary()
+        {
+            var serializer = new JavaScriptSerializer();
+            var deserializedResult = serializer.Deserialize<Dictionary<String,int>>(serializedResult);
+        }
+
+
 
     }
 }

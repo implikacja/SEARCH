@@ -21,6 +21,13 @@ namespace searcher.Controllers
                 ViewBag.Message = result;
                 UseXML x = new UseXML(result);
                 List<Article> articles = x.doList(t.getTokens());
+                //string MarkValue = Request.Form["Marks"].ToString();
+                //foreach(var a in articles)
+                //{
+                //    a.CountRelevance(MarkValue);
+                //}
+                //articles.Sort((a, b) => a.relevance.CompareTo(b.relevance));
+                //articles.Reverse();
                 return View(articles);
             }
             return View();

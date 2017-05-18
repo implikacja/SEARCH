@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace searcher.Models
 {
-
+    enum Marks
+    {
+        TF,
+        IDF
+    }
     public class Article
     {
         public string title;
@@ -38,5 +42,12 @@ namespace searcher.Models
         public string getTF_IDFList() {
             return String.Join(", ", TF_IDF);
         }
+
+        public void CountRelevance(string MarkValue)
+        {
+
+        }
     }
 }
+
+
