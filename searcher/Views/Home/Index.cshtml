@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<searcher.Models.Article>
 @{
     ViewBag.Title = "Home Page";
+
 }
 
 
@@ -10,6 +11,17 @@
     <p>
         Find: @Html.TextBox("searchString")
         <input type="submit" value="Search" />
+
+    </p>
+    <p>
+        @{
+            var markList = new SelectList(new[]
+            {
+                new SelectListItem { Text = "TF", Value = "0", Selected = true },
+                new SelectListItem { Text = "IDF", Value = "1"},
+            }, "Value", "Text");
+        }
+        @Html.DropDownList("Marks", markList)
     </p>
     <p>
         Query: @ViewBag.Message
