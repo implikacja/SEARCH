@@ -17,8 +17,8 @@
         @{
             var markList = new SelectList(new[]
             {
-                new SelectListItem { Text = "TF", Value = "0", Selected = true },
-                new SelectListItem { Text = "IDF", Value = "1"},
+                new SelectListItem { Text = "TF", Value = "TF", Selected = true },
+                new SelectListItem { Text = "IDF", Value = "IDF"},
             }, "Value", "Text");
         }
         @Html.DropDownList("Marks", markList)
@@ -37,8 +37,8 @@
                     <td> @MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />")) </td>
                     <td> @Html.DisplayFor(modelItem => item.title) </td>
                     <td> @Html.DisplayFor(modelItem => item.description) </td>
-                    <td> @item.getTFList() </td>
-                    <td> @item.getTF_IDFList() </td>
+                    <td> @Html.DisplayFor(modelItem => item.relevance) </td>
+                    
                 </tr>
 
             }

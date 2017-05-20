@@ -16,10 +16,10 @@ namespace searcher.Models
         public String input;
         List<string> tokens = new List<string>();
 
-
         public TokenizeStopStem(String input)
         {
             this.input = input;
+            
         }
 
         public void tokenize() {
@@ -41,17 +41,17 @@ namespace searcher.Models
             return tokens;
         }
 
-        public double[] countTermsFrequencies(List<string> searchWords) {
-            int numOfSearchWords = searchWords.Count;
+        public double[] countTermsFrequencies(Dictionary<string, int> dic) {
+            int numOfSearchWords = dic.Count;
             double[] tf = new double[numOfSearchWords];
 
             for (int i = 0; i < numOfSearchWords; i++)
                 tf[i] = 0f;
 
-            foreach (string token in tokens) {
-                for (int i = 0; i < numOfSearchWords; i++) {
-                    if (token.Equals(searchWords[i]))
-                        tf[i] += 1f;
+            foreach (var d in dic) {
+                foreach (string token in tokens) {
+                    if (token.Equals(d.Key))
+                        tf[d.Value] += 1f;
                 }
             }
 

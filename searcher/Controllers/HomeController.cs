@@ -14,25 +14,32 @@ namespace searcher.Controllers
         {
             if (!String.IsNullOrEmpty(searchString))
             {
+                // should go to application start
+                Data.load();
+                SearchIndex.AddUpdateLuceneIndex(Data.articles);
+                Dictionary.buildDictionary(Data.articles);
+                Dictionary.saveDictionary();
+
+
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
                 t.tokenize();
                 string result = t.getTokensList();
                 //String result = t.tokenization();
                 ViewBag.Message = result;
 
-                // should go to application start
-                Data.load();
-                SearchIndex.AddUpdateLuceneIndex(Data.articles);
 
-                UseXML x = new UseXML(result);
+
+                UseXML x = new UseXML();
                 List<Article> articles = x.doList(t.getTokens());
-                //string MarkValue = Request.Form["Marks"].ToString();
-                //foreach(var a in articles)
-                //{
-                //    a.CountRelevance(MarkValue);
-                //}
-                //articles.Sort((a, b) => a.relevance.CompareTo(b.relevance));
-                //articles.Reverse();
+                string MarkValue = Request.Form["Marks"].ToString();
+                x.countTermsFrequenciesQuery(t.getTokens());
+
+                foreach (var a in articles)
+                {
+                   a.CountRelevance(MarkValue, x.queryTF);
+                }
+                articles.Sort((a, b) => a.relevance.CompareTo(b.relevance));
+                articles.Reverse();
                 return View(articles);
             }
             return View();

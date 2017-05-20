@@ -19,7 +19,7 @@ namespace searcher.Models
         public string dateStr;
         public double[] TF;
         public double[] TF_IDF;
-        public float relevance;
+        public double relevance;
         public Author[] authors;
         public int Id;
         private static int IdNumerator = 0;
@@ -46,8 +46,29 @@ namespace searcher.Models
             return String.Join(", ", TF_IDF);
         }
 
-        public void CountRelevance(string MarkValue)
+        public void CountRelevance(string MarkValue, double[] queryTF)
         {
+            if(MarkValue == "TF")
+            {
+                int queryCount = Dictionary.dictionary.Count;
+                double r = 0f;
+                double qLength = 0f;
+                double aLength = 0f;
+                for (int i = 0; i < queryCount; i++)
+                {
+                    r += (queryTF[i] * TF[i]);
+                    qLength += (queryTF[i] * queryTF[i]);
+                    aLength += (TF[i] * TF[i]);
+                }
+                if(qLength == 0f)
+                {
+                    relevance = 0f;
+                    return;
+                }
+                qLength = Math.Sqrt(qLength);
+                aLength = Math.Sqrt(aLength);
+                relevance = r / (qLength * aLength);
+            }
 
         }
     }

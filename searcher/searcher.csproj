@@ -214,6 +214,7 @@
     <Compile Include="Models\Article.cs" />
     <Compile Include="Models\Author.cs" />
     <Compile Include="Models\Data.cs" />
+    <Compile Include="Models\Dictionary.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SearchIndex.cs" />

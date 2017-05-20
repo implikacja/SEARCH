@@ -12,13 +12,8 @@ namespace searcher.Models
 {
     class UseXML
     {
-        String input;
-        Dictionary<String, int> dictionary;
+        public double[] queryTF;
 
-        public UseXML(String input)
-        {
-            this.input = input;
-        }
 
         public List<Article> doList(List<string> searchWords)
         {
@@ -67,42 +62,31 @@ namespace searcher.Models
             TokenizeStopStem t = new TokenizeStopStem(article.description);
             t.tokenize();
 
-            article.TF = t.countTermsFrequencies(searchWords);
+            article.TF = t.countTermsFrequencies(Dictionary.dictionary);
         }
 
-        public void buildDictionary(Article article)
+        public void countTermsFrequenciesQuery(List<string> searchWords)
         {
-            if(dictionary == null)
-                dictionary = new Dictionary<string, int>();
-            TokenizeStopStem t = new TokenizeStopStem(article.description);
-            t.tokenize();
-            List<String> tokens = t.getTokens();
-            foreach(String token in tokens)
+            int numOfWords = Dictionary.dictionary.Count;
+            queryTF = new double[numOfWords];
+
+            for (int i = 0; i < numOfWords; i++)
+                queryTF[i] = 0f;
+
+            foreach (var d in Dictionary.dictionary)
             {
-                if (dictionary.ContainsKey(token))
+                foreach (string s in searchWords)
                 {
-                    dictionary[token]++;
-                }
-                else
-                {
-                    dictionary.Add(token, 1);
+                    if (s.Equals(d.Key))
+                        queryTF[d.Value] += 1f;
                 }
             }
-            
-        }
 
-        public void saveDictionary()
-        {
-            var serializer = new JavaScriptSerializer();
-            var json = serializer.Serialize(dictionary);
-            var path = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, @"App_Data\dictionary.json");
-            File.WriteAllText(path, json);
-        }
+            double maxTF = queryTF.Max();
 
-        public void loadDictionary()
-        {
-            var serializer = new JavaScriptSerializer();
-            var deserializedResult = serializer.Deserialize<Dictionary<String,int>>(serializedResult);
+            if (maxTF != 0)
+                for (int i = 0; i < numOfWords; i++)
+                    queryTF[i] /= maxTF; // tokens.Count;
         }
 
 
