@@ -19,6 +19,11 @@ namespace searcher.Controllers
                 string result = t.getTokensList();
                 //String result = t.tokenization();
                 ViewBag.Message = result;
+
+                // should go to application start
+                Data.load();
+                SearchIndex.AddUpdateLuceneIndex(Data.articles);
+
                 UseXML x = new UseXML(result);
                 List<Article> articles = x.doList(t.getTokens());
                 return View(articles);

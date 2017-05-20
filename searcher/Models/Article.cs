@@ -12,14 +12,17 @@ namespace searcher.Models
         public string title;
         public string description;
         public DateTime date;
+        public string dateStr;
         public double[] TF;
         public double[] TF_IDF;
         public float relevance;
         public Author[] authors;
+        public int Id;
+        private static int IdNumerator = 0;
 
         public Article() 
         {
-
+            this.Id = IdNumerator++;
         }
 
         public string getAuthorsList() {

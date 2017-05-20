@@ -1,4 +1,6 @@
-﻿using System;
+﻿using searcher.App_Start;
+using searcher.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,7 @@ namespace searcher
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //DataLoader.Init();
         }
     }
 }
