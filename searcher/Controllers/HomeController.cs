@@ -10,9 +10,10 @@ namespace searcher.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string searchString, int[] relevantList, int[] irrelevantList)
+
+        public ActionResult Index(string command, string fileToIndex, string searchString, int[] relevantList, int[] irrelevantList)
         {
-            if (!String.IsNullOrEmpty(searchString))
+            if (command == "Search" && !String.IsNullOrEmpty(searchString))
             {
                 // should go to application start DONE in Startup.Auth.cs
                 //Data.load();
@@ -86,6 +87,11 @@ namespace searcher.Controllers
                 articles.Reverse();
                 return View(articles);
             }
+
+            if (command == "Create index") {
+                Data.newLoad(fileToIndex);
+            }
+
             return View();
         }
 

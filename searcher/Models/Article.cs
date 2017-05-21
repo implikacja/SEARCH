@@ -17,6 +17,7 @@ namespace searcher.Models
         public double[] TF_IDF;
         public double relevance;
         public Author[] authors;
+        public List<Author> authors2;
         public int Id;
         private static int IdNumerator = 0;
         public bool relevant { get; set; }
@@ -25,6 +26,11 @@ namespace searcher.Models
         public Article() 
         {
             this.Id = IdNumerator++;
+            this.title = "";
+            this.description = "";
+            this.date = DateTime.MinValue;
+            this.authors2 = new List<Author>();
+            this.dateStr = "00000000";
         }
 
         public string getAuthorsList() {
