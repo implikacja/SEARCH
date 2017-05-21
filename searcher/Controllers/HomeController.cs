@@ -15,12 +15,6 @@ namespace searcher.Controllers
         {
             if (command == "Search" && !String.IsNullOrEmpty(searchString))
             {
-                // should go to application start DONE in Startup.Auth.cs
-                //Data.load();
-                //SearchIndex.AddUpdateLuceneIndex(Data.articles);
-                //Dictionary.buildDictionary(Data.articles);
-                //Dictionary.saveDictionary();
-
 
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
                 t.tokenize();
