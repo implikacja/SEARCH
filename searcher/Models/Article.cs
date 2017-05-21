@@ -50,6 +50,23 @@ namespace searcher.Models
             return String.Join(", ", TF_IDF);
         }
 
+        public void createDate() {
+            Int32 y, m, d;
+            string s = dateStr;
+
+            System.Diagnostics.Debug.WriteLine(s);
+
+            m = int.Parse(s.Substring(0, s.IndexOf('/')));
+            s = s.Substring(s.IndexOf('/') + 1);
+            d = int.Parse(s.Substring(0, s.IndexOf('/')));
+            s = s.Substring(s.IndexOf('/') + 1);
+            y = int.Parse(s.Substring(0, 4));
+
+            System.Diagnostics.Debug.WriteLine(y + " " + m + " " + d);
+
+            date = new DateTime(y, m, d);
+        }
+
         public void CountRelevance(string MarkValue, double[] queryTF, double[] queryTF_IDF)
         {
             if(MarkValue == "TF")

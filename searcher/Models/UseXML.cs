@@ -18,7 +18,12 @@ namespace searcher.Models
 
         public List<Article> doList(List<string> searchWords)
         {
-            List<Article> articles = Data.articles;
+            string query = "";
+            foreach (String word in searchWords) {
+                query += word + " ";
+            }
+
+            List<Article> articles = SearchIndex.FindArticles(query);
 
             int[] searchWordsCount = new int[searchWords.Count];
             double[] IDF = new double[searchWords.Count];
