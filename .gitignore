@@ -1,3 +1,7 @@
-searcher/obj/Debug/searcher.dll
-searcher/obj/Debug/searcher.pdb
-searcher/bin/searcher.dll
+searcher/obj/
+searcher/bin/
+searcher/lucene_index/
+searcher/.vs/
+searcher/App_Data/dictionary.json
+.vs/
+packages/
