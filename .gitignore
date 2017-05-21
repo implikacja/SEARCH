@@ -5,3 +5,4 @@ searcher/.vs/
 searcher/App_Data/dictionary.json
 .vs/
 packages/
+*.sln
