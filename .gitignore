@@ -1,3 +1,6 @@
 searcher/obj/Debug/searcher.dll
 searcher/obj/Debug/searcher.pdb
 searcher/bin/searcher.dll
+searcher/bin/
+searcher/lucene_index/
+searcher/App_Data/*.xml

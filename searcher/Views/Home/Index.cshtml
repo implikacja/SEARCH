@@ -4,65 +4,66 @@
 
 }
 
-
 <div class="row">
-@using (Html.BeginForm())
-{
-    <p>
-        Find: @Html.TextBox("searchString")
-        <input type="submit" value="Search" />
+    @using (Html.BeginForm()) {
+        <p>
+            Filename with data: @Html.TextBox("fileToIndex")
+            <input type="submit" name="command" value="Create index" />
+        </p>
 
-    </p>
-    <p>
-        Measure:
-        @{
-            var markList = new SelectList(new[]
-            {
+        <p>
+            Find: @Html.TextBox("searchString")
+            <input type="submit" name="command" value="Search" />
+
+        </p>
+        <p>
+            Measure:
+            @{
+                var markList = new SelectList(new[]
+                {
                 new SelectListItem { Text = "TF", Value = "TF"},
                 new SelectListItem { Text = "IDF", Value = "IDF"},
             }, "Value", "Text");
-        }
-        @Html.DropDownList("Marks", markList)
-        Actual: @ViewBag.Mark
-    </p>
-    <p>
-        Query: @ViewBag.Message
-    </p>
-    <p>
-        Decision Support System:
-        @{
-            var supportList = new SelectList(new[]
-            {
+            }
+            @Html.DropDownList("Marks", markList)
+            Actual: @ViewBag.Mark
+        </p>
+        <p>
+            Query: @ViewBag.Message
+        </p>
+        <p>
+            Decision Support System:
+            @{
+                var supportList = new SelectList(new[]
+                {
                 new SelectListItem { Text = "None", Value = "None"},
                 new SelectListItem { Text = "Relevance feedback", Value = "Relevance feedback"},//Rocchio
                 new SelectListItem { Text = "Weighted terms", Value = "Weighted terms"},
             }, "Value", "Text");
-        }
-        @Html.DropDownList("Support", supportList)
-        Actual: @ViewBag.Support
-    </p>
-
-    if (Model != null)
-    {
-        <table class="table">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> @item.date.ToString("d") </td>
-                    <td> @MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />")) </td>
-                    <td> @Html.DisplayFor(modelItem => item.title) </td>
-                    <td> @Html.DisplayFor(modelItem => item.description) </td>
-                    <td> @Html.DisplayFor(modelItem => item.relevance) </td>
-                    <td> 
-                          <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
-                          <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
-                    </td>
-                    <td> @Html.DisplayFor(modelItem => item.relevant)</td>
-
-                </tr>
-
             }
-        </table>
-    }
-}
+            @Html.DropDownList("Support", supportList)
+            Actual: @ViewBag.Support
+        </p>
+
+                if (Model != null) {
+                    <table class="table">
+                        @foreach (var item in Model) {
+                            <tr>
+                                <td> @item.date.ToString("d") </td>
+                                <td> @*@MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />"))*@ </td>
+                                <td> @Html.DisplayFor(modelItem => item.title) </td>
+                                <td> @Html.DisplayFor(modelItem => item.description) </td>
+                                <td> @Html.DisplayFor(modelItem => item.relevance) </td>
+                                <td>
+                                    <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
+                                    <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
+                                </td>
+                                <td> @Html.DisplayFor(modelItem => item.relevant)</td>
+
+                            </tr>
+
+                        }
+                    </table>
+                    }
+                }
 </div>
