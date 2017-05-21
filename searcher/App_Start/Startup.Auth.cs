@@ -63,6 +63,10 @@ namespace searcher
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+            Data.load();
+            SearchIndex.AddUpdateLuceneIndex(Data.articles);
+            Dictionary.buildDictionary(Data.articles);
+            Dictionary.saveDictionary();
         }
     }
 }

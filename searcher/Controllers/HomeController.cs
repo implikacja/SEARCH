@@ -10,15 +10,15 @@ namespace searcher.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, int[] relevantList, int[] irrelevantList)
         {
             if (!String.IsNullOrEmpty(searchString))
             {
-                // should go to application start
-                Data.load();
-                SearchIndex.AddUpdateLuceneIndex(Data.articles);
-                Dictionary.buildDictionary(Data.articles);
-                Dictionary.saveDictionary();
+                // should go to application start DONE in Startup.Auth.cs
+                //Data.load();
+                //SearchIndex.AddUpdateLuceneIndex(Data.articles);
+                //Dictionary.buildDictionary(Data.articles);
+                //Dictionary.saveDictionary();
 
 
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
@@ -32,11 +32,55 @@ namespace searcher.Controllers
                 UseXML x = new UseXML();
                 List<Article> articles = x.doList(t.getTokens());
                 string MarkValue = Request.Form["Marks"].ToString();
-                x.countTermsFrequenciesQuery(t.getTokens());
+                ViewBag.Mark = MarkValue;
+                string SupportValue = Request.Form["Support"].ToString();
+                ViewBag.Support = SupportValue;
+                switch (MarkValue)
+                {
+                    case "TF":
+                        {
+                            x.countTermsFrequenciesQuery(t.getTokens());
+                            break;
+                        }
+                    default: break;               
+                }
+
+                switch (SupportValue)
+                {
+                    case "Relevance feedback":
+                        {
+
+                                foreach (var article in articles)
+                                {
+                                    article.relevant = false;
+                                    article.irrelevant = false;
+                                if (relevantList!=null)
+                                    {
+                                        if (relevantList.Contains(article.Id))
+                                            article.relevant = true;
+                                    }
+                                    if(irrelevantList!=null)
+                                    {
+                                        if (irrelevantList.Contains(article.Id))
+                                            article.irrelevant = true;
+                                }
+
+                                    if(article.relevant == true && article.irrelevant == true)
+                                    {
+                                        article.relevant = false;
+                                        article.irrelevant = false;
+                                    }
+                                
+                                x.rocchio(articles, MarkValue, 1, 1, 0.5);
+                            }
+                            break;
+                        }
+                    default: break;
+                }
 
                 foreach (var a in articles)
                 {
-                   a.CountRelevance(MarkValue, x.queryTF);
+                   a.CountRelevance(MarkValue, x.queryTF, x.queryTF_IDF);
                 }
                 articles.Sort((a, b) => a.relevance.CompareTo(b.relevance));
                 articles.Reverse();

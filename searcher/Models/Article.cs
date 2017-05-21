@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace searcher.Models
 {
-    enum Marks
-    {
-        TF,
-        IDF
-    }
+
     public class Article
     {
         public string title;
@@ -23,6 +19,8 @@ namespace searcher.Models
         public Author[] authors;
         public int Id;
         private static int IdNumerator = 0;
+        public bool relevant { get; set; }
+        public bool irrelevant { get; set; }
 
         public Article() 
         {
@@ -46,7 +44,7 @@ namespace searcher.Models
             return String.Join(", ", TF_IDF);
         }
 
-        public void CountRelevance(string MarkValue, double[] queryTF)
+        public void CountRelevance(string MarkValue, double[] queryTF, double[] queryTF_IDF)
         {
             if(MarkValue == "TF")
             {
@@ -61,6 +59,27 @@ namespace searcher.Models
                     aLength += (TF[i] * TF[i]);
                 }
                 if(qLength == 0f)
+                {
+                    relevance = 0f;
+                    return;
+                }
+                qLength = Math.Sqrt(qLength);
+                aLength = Math.Sqrt(aLength);
+                relevance = r / (qLength * aLength);
+            }
+            else if(MarkValue == "TF_IDF")
+            {
+                int queryCount = Dictionary.dictionary.Count;
+                double r = 0f;
+                double qLength = 0f;
+                double aLength = 0f;
+                for (int i = 0; i < queryCount; i++)
+                {
+                    r += (queryTF_IDF[i] * TF_IDF[i]);
+                    qLength += (queryTF_IDF[i] * queryTF_IDF[i]);
+                    aLength += (TF_IDF[i] * TF_IDF[i]);
+                }
+                if (qLength == 0f)
                 {
                     relevance = 0f;
                     return;

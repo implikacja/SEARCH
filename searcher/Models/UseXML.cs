@@ -13,6 +13,7 @@ namespace searcher.Models
     class UseXML
     {
         public double[] queryTF;
+        public double[] queryTF_IDF;
 
 
         public List<Article> doList(List<string> searchWords)
@@ -87,6 +88,66 @@ namespace searcher.Models
             if (maxTF != 0)
                 for (int i = 0; i < numOfWords; i++)
                     queryTF[i] /= maxTF; // tokens.Count;
+        }
+
+        public void rocchio(List<Article> articles, string MarkValue, double alfa, double beta, double gamma)
+        {
+            if(MarkValue == "TF")
+            {
+                for(int i = 0; i<queryTF.Length;i++)
+                {
+                    queryTF[i] *= alfa;
+                }
+                int rel = 0;
+                double[] valueRel;
+                int irrel = 0;
+                double[] valueIrrel;
+                foreach(var article in articles)
+                {
+                    if(article.relevant)
+                    {
+                        rel++;
+                        valueRel = new double[article.TF.Length];
+                        for (int i = 0;i<valueRel.Length;i++)
+                        {
+                            valueRel[i]= 0f;
+                        }
+                            
+                        for(int i = 0; i<article.TF.Length;i++)
+                        {
+                            valueRel[i] += article.TF[i];
+                        }
+
+                        for(int i = 0;i<queryTF.Length;i++)
+                        {
+                            queryTF[i] += (beta * (valueRel[i] / rel));
+                        }
+                    }
+                    if(article.irrelevant)
+                    {
+                        irrel++;
+                        valueIrrel = new double[article.TF.Length];
+                        for (int i = 0; i < valueIrrel.Length; i++)
+                        {
+                            valueIrrel[i] = 0f;
+                        }
+
+                        for (int i = 0; i < article.TF.Length; i++)
+                        {
+                            valueIrrel[i] += article.TF[i];
+                        }
+
+                        for (int i = 0; i < queryTF.Length; i++)
+                        {
+                            queryTF[i] -= (gamma * (valueIrrel[i] / irrel));
+                            if(queryTF[i]<0f)
+                            {
+                                queryTF[i] = 0f;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
 
