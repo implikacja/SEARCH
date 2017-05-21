@@ -88,6 +88,16 @@ namespace searcher.Models {
                     queryTF[i] /= maxTF; // tokens.Count;
         }
 
+        public void countTF_IDF(List<string> searchWords) {
+            int numOfWords = Dictionary.dictionary.Count;
+            queryTF_IDF = new double[numOfWords];
+
+            for (int i = 0; i < numOfWords; i++)
+                queryTF_IDF[i] = 0.0;
+
+
+        }
+
         public void rocchio(List<Article> articles, string MarkValue, double alfa, double beta, double gamma) {
             if (MarkValue == "TF") {
                 for (int i = 0; i < queryTF.Length; i++) {

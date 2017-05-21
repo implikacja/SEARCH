@@ -69,8 +69,11 @@ namespace searcher.Models {
                 luceneID = item.Doc;
                 Document doc = indexSearcher.Doc(luceneID);
 
-                article = new Article();
+                article = new Article(false);
                 String value;
+                value = doc.GetField(ID).ToString();
+                value = cutDocString(value);
+                article.Id = int.Parse(value);
                 value = doc.GetField(DESCRIPTION).ToString();
                 value = cutDocString(value);
                 article.description = value;

@@ -18,8 +18,6 @@ namespace searcher.Controllers {
                 //String result = t.tokenization();
                 ViewBag.Message = result;
 
-
-
                 UseXML x = new UseXML();
                 List<Article> articles = x.doList(t.getTokens());
                 string MarkValue = Request.Form["Marks"].ToString();
@@ -29,6 +27,10 @@ namespace searcher.Controllers {
                 switch (MarkValue) {
                     case "TF": {
                             x.countTermsFrequenciesQuery(t.getTokens());
+                            break;
+                        }
+                    case "IDF": {
+
                             break;
                         }
                     default: break;

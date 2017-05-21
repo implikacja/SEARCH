@@ -18,7 +18,7 @@ namespace searcher.Models {
             int max = 500;
             int i = 1;
             var articlesToIndex = new List<Article>();
-            Article article = new Article();
+            Article article = new Article(false);
 
             System.Diagnostics.Debug.WriteLine("Articles indexed from file: " + fileName);
 
@@ -26,7 +26,7 @@ namespace searcher.Models {
             while (xmlReader.Read()) {
 
                 if (xmlReader.NodeType == XmlNodeType.Element && xmlReader.Name == "PubmedArticle") {
-                    article = new Article();
+                    article = new Article(true);
                 } else
                 if (xmlReader.NodeType == XmlNodeType.Element && xmlReader.Name == "ArticleTitle") {
                     xmlReader.Read();
