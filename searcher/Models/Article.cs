@@ -17,6 +17,7 @@ namespace searcher.Models
         public double[] TF_IDF;
         public double relevance;
         public Author[] authors;
+        public List<Author> authors2;
         public int Id;
         private static int IdNumerator = 0;
         public bool relevant { get; set; }
@@ -25,6 +26,11 @@ namespace searcher.Models
         public Article() 
         {
             this.Id = IdNumerator++;
+            this.title = "";
+            this.description = "";
+            this.date = DateTime.MinValue;
+            this.authors2 = new List<Author>();
+            this.dateStr = "00000000";
         }
 
         public string getAuthorsList() {
@@ -42,6 +48,23 @@ namespace searcher.Models
 
         public string getTF_IDFList() {
             return String.Join(", ", TF_IDF);
+        }
+
+        public void createDate() {
+            Int32 y, m, d;
+            string s = dateStr;
+
+            System.Diagnostics.Debug.WriteLine(s);
+
+            m = int.Parse(s.Substring(0, s.IndexOf('/')));
+            s = s.Substring(s.IndexOf('/') + 1);
+            d = int.Parse(s.Substring(0, s.IndexOf('/')));
+            s = s.Substring(s.IndexOf('/') + 1);
+            y = int.Parse(s.Substring(0, 4));
+
+            System.Diagnostics.Debug.WriteLine(y + " " + m + " " + d);
+
+            date = new DateTime(y, m, d);
         }
 
         public void CountRelevance(string MarkValue, double[] queryTF, double[] queryTF_IDF)

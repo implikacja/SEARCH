@@ -4,13 +4,16 @@
 
 }
 
-
 <div class="row">
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
+    <p>
+        Filename with data: @Html.TextBox("fileToIndex")
+        <input type="submit" name="command" value="Create index" />
+    </p>
+
     <p>
         Find: @Html.TextBox("searchString")
-        <input type="submit" value="Search" />
+        <input type="submit" name="command" value="Search" />
 
     </p>
     <p>
@@ -42,14 +45,12 @@
         Actual: @ViewBag.Support
     </p>
 
-    if (Model != null)
-    {
+            if (Model != null) {
         <table class="table">
-            @foreach (var item in Model)
-            {
+            @foreach (var item in Model) {
                 <tr>
                     <td> @item.date.ToString("d") </td>
-                    <td> @MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />")) </td>
+                    <td> @*@MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />"))*@ </td>
                     <td> @Html.DisplayFor(modelItem => item.title) </td>
                     <td> @Html.DisplayFor(modelItem => item.description) </td>
                     <td> @Html.DisplayFor(modelItem => item.relevance) </td>
@@ -63,6 +64,6 @@
 
             }
         </table>
-    }
-}
+                }
+            }
 </div>

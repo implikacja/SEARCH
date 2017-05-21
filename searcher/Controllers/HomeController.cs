@@ -10,16 +10,11 @@ namespace searcher.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string searchString, int[] relevantList, int[] irrelevantList)
-        {
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                // should go to application start DONE in Startup.Auth.cs
-                //Data.load();
-                //SearchIndex.AddUpdateLuceneIndex(Data.articles);
-                //Dictionary.buildDictionary(Data.articles);
-                //Dictionary.saveDictionary();
 
+        public ActionResult Index(string command, string fileToIndex, string searchString, int[] relevantList, int[] irrelevantList)
+        {
+            if (command == "Search" && !String.IsNullOrEmpty(searchString))
+            {
 
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
                 t.tokenize();
@@ -86,6 +81,11 @@ namespace searcher.Controllers
                 articles.Reverse();
                 return View(articles);
             }
+
+            if (command == "Create index") {
+                Data.newLoad(fileToIndex);
+            }
+
             return View();
         }
 
