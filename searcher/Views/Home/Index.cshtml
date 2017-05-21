@@ -28,6 +28,33 @@
     <p>
         Query: @ViewBag.Message
     </p>
+    if (ViewBag.Terms != null)
+    {
+        <p>
+
+            Terms:
+            <ul>
+                @foreach (var term in ViewBag.Terms)
+                {
+                    <li>
+                        @term
+                        @{
+                            var intList = new SelectList(new[]
+                            {
+                new SelectListItem { Text = "1", Value = "1"},
+                new SelectListItem { Text = "2", Value = "2"},
+                new SelectListItem { Text = "3", Value = "3"},
+                new SelectListItem { Text = "4", Value = "4"},
+                new SelectListItem { Text = "5", Value = "5"},
+            }, "Value", "Text");
+                        }
+                        @Html.DropDownList("intList", intList)
+                    </li>
+                            }
+            </ul>
+        </p>
+                    }
+
     <p>
         Decision Support System:
         @{
@@ -57,7 +84,16 @@
                           <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
                           <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
                     </td>
-                    <td> @Html.DisplayFor(modelItem => item.relevant)</td>
+                    <td>@if (ViewBag.W != null)
+                    {
+                        <ul>
+                            @foreach(var w in ViewBag.W)
+                            {
+                            <li>@w</li>
+                            }
+                        </ul>
+                    }
+                    </td>
 
                 </tr>
 

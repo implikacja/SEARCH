@@ -150,7 +150,24 @@ namespace searcher.Models
             }
         }
 
-
+        public void weightedTerms(string MarkValue, int[] weights, List<string> searchWords)
+        {
+            int sum = weights.Sum();
+            if(MarkValue == "TF")
+            {
+                foreach(var d in Dictionary.dictionary)
+                {
+                    for(int j = 0; j<searchWords.Count();j++)
+                    {
+                        if (d.Key.Equals(searchWords[j]))
+                        {
+                            queryTF[d.Value] *= (weights[j] / (double)sum);
+                        }
+                    }
+                    
+                }
+            }
+        }
 
     }
 }
