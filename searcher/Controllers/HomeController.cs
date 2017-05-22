@@ -17,6 +17,7 @@ namespace searcher.Controllers {
                 string result = t.getTokensList();
                 //String result = t.tokenization();
                 ViewBag.Message = result;
+                ViewBag.Terms = t.getTokens();
 
                 UseXML x = new UseXML();
                 List<Article> articles = x.doList(t.getTokens());
@@ -58,6 +59,15 @@ namespace searcher.Controllers {
 
                                 x.rocchio(articles, MarkValue, 1, 1, 0.5);
                             }
+                            break;
+                        }
+                    case "Weighted terms": {
+                            string[] w = new string[t.getTokens().Count()];
+                            w = Request.Form.GetValues("intList");
+                            int[] weights = w.Select(int.Parse).ToArray();
+                            ViewBag.W = weights;
+                            if (weights.Length == t.getTokens().Count())
+                                x.weightedTerms(MarkValue, weights, t.getTokens());
                             break;
                         }
                     default: break;
