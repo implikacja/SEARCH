@@ -88,17 +88,7 @@ namespace searcher.Models {
             date = new DateTime(y, m, d);
         }
 
-        private void countYearFrequencies(Article article, int year, double alfa)
-        {
-            article.TFYear = article.TF;
-            if (article.date.Year < year)
-            {
-                for (int i = 0; i < article.TFYear.Length; i++)
-                {
-                    article.TFYear[i] *= alfa;
-                }
-            }
-        }
+
         public void CountRelevance(string MarkValue, double[] queryTF, double[] queryTF_IDF) {
             int queryCount = Dictionary.dictionary.Count;
             double r = 0f;
@@ -114,7 +104,7 @@ namespace searcher.Models {
                 }
 
             }
-            else if (MarkValue == "TF_IDF")
+            else if (MarkValue == "IDF")
             {
                 for (int i = 0; i < queryCount; i++)
                 {
