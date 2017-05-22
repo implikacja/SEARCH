@@ -70,31 +70,20 @@
         Actual: @ViewBag.Support
     </p>
 
-    if (Model != null)
-    {
-        <table class="table">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td> @item.date.ToString("d") </td>
-                    <td> @MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />")) </td>
-                    <td> @Html.DisplayFor(modelItem => item.title) </td>
-                    <td> @Html.DisplayFor(modelItem => item.description) </td>
-                    <td> @Html.DisplayFor(modelItem => item.relevance) </td>
-                    <td> 
-                          <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
-                          <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
-                    </td>
-                    <td>@if (ViewBag.W != null)
-                    {
-                        <ul>
-                            @foreach(var w in ViewBag.W)
-                            {
-                            <li>@w</li>
-                            }
-                        </ul>
-                    }
-                    </td>
+                @if (Model != null) {
+                    <table class="table">
+                        @foreach (var item in Model) {
+                            <tr>
+                                <td> @Html.DisplayFor(modelItem => item.Id) </td>
+                                <td> @item.date.ToString("d") </td>
+                                <td> @*@MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />"))*@ </td>
+                                <td> @Html.DisplayFor(modelItem => item.title) </td>
+                                <td> @Html.DisplayFor(modelItem => item.description) </td>
+                                <td> @Html.DisplayFor(modelItem => item.relevance) </td>
+                                <td>
+                                    <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
+                                    <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
+                                </td>
 
                 </tr>
 

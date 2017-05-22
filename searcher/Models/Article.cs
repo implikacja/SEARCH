@@ -23,7 +23,19 @@ namespace searcher.Models {
         public bool irrelevant { get; set; }
 
         public Article() {
-            this.Id = IdNumerator++;
+            this.Id = 0;
+            this.title = "";
+            this.description = "";
+            this.date = DateTime.MinValue;
+            this.authors2 = new List<Author>();
+            this.dateStr = "00000000";
+        }
+
+        public Article(bool newId) {
+            this.Id = 0;
+            if (newId) {
+                this.Id = IdNumerator++;
+            };
             this.title = "";
             this.description = "";
             this.date = DateTime.MinValue;
