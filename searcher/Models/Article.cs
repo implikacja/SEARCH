@@ -109,6 +109,8 @@ namespace searcher.Models {
             {
                 for (int i = 0; i < queryCount; i++)
                 {
+                    if (queryTF_IDF[i] != 0)
+                        System.Diagnostics.Debug.WriteLine("TF_IDF: " + TF_IDF[i]);
                     r += (queryTF_IDF[i] * TF_IDF[i]);
                     qLength += (queryTF_IDF[i] * queryTF_IDF[i]);
                     aLength += (TF_IDF[i] * TF_IDF[i]);
@@ -141,6 +143,8 @@ namespace searcher.Models {
             qLength = Math.Sqrt(qLength);
             aLength = Math.Sqrt(aLength);
             relevance = r / (qLength * aLength);
+
+            System.Diagnostics.Debug.WriteLine("alength: " + aLength + ", qlength: " + qLength + ", r: " + r);
 
 
         }

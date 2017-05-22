@@ -45,7 +45,7 @@ namespace searcher.Models {
                 }
             }
 
-            for (int i = 0; i < searchWords.Count; i++) {
+            for (int i = 0; i < numOfWords; i++) {
                 if (searchWordsCount[i] >= 1)
                     IDF[i] = Math.Log10((double)articles.Count / searchWordsCount[i]);
             }
@@ -55,9 +55,9 @@ namespace searcher.Models {
             System.Diagnostics.Debug.WriteLine("IDF: " + String.Join(", ", IDF.ToArray()));
 
             foreach (Article art in articles) {
-                art.TF_IDF = new double[searchWords.Count];
+                art.TF_IDF = new double[numOfWords];
 
-                for (int i = 0; i < searchWords.Count; i++) {
+                for (int i = 0; i < numOfWords; i++) {
                     art.TF_IDF[i] = art.TF[i] * IDF[i];
                 }
             }
@@ -84,17 +84,18 @@ namespace searcher.Models {
         public void countTermsFrequenciesQuery(List<string> searchWords) {
             int numOfWords = Dictionary.dictionary.Count;
             queryTF = new double[numOfWords];
+            queryTF_IDF = new double[numOfWords];
             queryTFYear = new double[numOfWords];
             queryTFTitle = new double[numOfWords];
 
-            for (int i = 0; i < numOfWords; i++)
+            for (int i = 0; i < numOfWords; i++) {
                 queryTF[i] = 0f;
+                queryTF_IDF[i] = 0f;
+            }
 
-            foreach (var d in Dictionary.dictionary) {
-                foreach (string s in searchWords) {
-                    if (s.Equals(d.Key))
-                        queryTF[d.Value] += 1f;
-                }
+            foreach (string s in searchWords) {
+                if (Dictionary.dictionary.ContainsKey(s))
+                    queryTF[Dictionary.dictionary[s]] += 1f;
             }
 
             double maxTF = queryTF.Max();
@@ -105,6 +106,12 @@ namespace searcher.Models {
 
             for (int i = 0; i < queryTF.Length; i++)
             {
+                if (queryTF[i] == 0) {
+                    queryTF_IDF[i] = 0;
+                } else {
+                    queryTF_IDF[i] = 1;
+                }
+
                 queryTFYear[i] = queryTF[i];
                 queryTFTitle[i] = queryTF[i];
             }
@@ -150,15 +157,6 @@ namespace searcher.Models {
             {
                 article.TFTitle[i] *= (1/(double)count);
             }
-
-        }
-        public void countTF_IDF(List<string> searchWords) {
-            int numOfWords = Dictionary.dictionary.Count;
-            queryTF_IDF = new double[numOfWords];
-
-            for (int i = 0; i < numOfWords; i++)
-                queryTF_IDF[i] = 0.0;
-
 
         }
 

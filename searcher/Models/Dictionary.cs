@@ -31,8 +31,6 @@ namespace searcher.Models
                     }
                 }
             }
-
-
         }
 
         public static void saveDictionary()

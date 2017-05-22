@@ -25,18 +25,8 @@ namespace searcher.Controllers {
                 ViewBag.Mark = MarkValue;
                 string SupportValue = Request.Form["Support"].ToString();
                 ViewBag.Support = SupportValue;
-                switch (MarkValue) {
-                    case "IDF": {
 
-                            break;
-                        }
-                    default:
-                        {
-                            x.countTermsFrequenciesQuery(t.getTokens());
-                            break;
-                        }
-
-                }
+                x.countTermsFrequenciesQuery(t.getTokens());
 
                 switch (SupportValue) {
                     case "Relevance feedback": {
