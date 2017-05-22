@@ -26,20 +26,16 @@ namespace searcher.Controllers {
                 string SupportValue = Request.Form["Support"].ToString();
                 ViewBag.Support = SupportValue;
                 switch (MarkValue) {
-                    case "TF": {
-                            x.countTermsFrequenciesQuery(t.getTokens());
-                            break;
-                        }
                     case "IDF": {
 
                             break;
                         }
-                    case "YEAR":
+                    default:
                         {
                             x.countTermsFrequenciesQuery(t.getTokens());
                             break;
                         }
-                    default: break;
+
                 }
 
                 switch (SupportValue) {

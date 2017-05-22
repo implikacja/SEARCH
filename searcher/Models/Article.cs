@@ -14,6 +14,7 @@ namespace searcher.Models {
         public double[] TF;
         public double[] TF_IDF;
         public double[] TFYear;
+        public double[] TFTitle;
         public double relevance;
         public Author[] authors;
         public List<Author> authors2;
@@ -121,6 +122,15 @@ namespace searcher.Models {
                     r += (queryTF[i] * TF[i]);
                     qLength += (queryTF[i] * queryTF[i]);
                     aLength += (TFYear[i] * TFYear[i]);
+                }
+            }
+            else if (MarkValue == "TITLE")//QueryTF == QueryYear
+            {
+                for (int i = 0; i < queryCount; i++)
+                {
+                    r += (queryTF[i] * TF[i]);
+                    qLength += (queryTF[i] * queryTF[i]);
+                    aLength += (TFTitle[i] * TFTitle[i]);
                 }
             }
             if (qLength == 0f)

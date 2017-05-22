@@ -24,6 +24,7 @@
                 new SelectListItem { Text = "TF", Value = "TF"},
                 new SelectListItem { Text = "IDF", Value = "IDF"},
                 new SelectListItem { Text = "YEAR", Value = "YEAR"},
+                new SelectListItem { Text = "TITLE", Value = "TITLE"},
             }, "Value", "Text");
             }
             @Html.DropDownList("Marks", markList)
@@ -86,7 +87,6 @@
                                     <input type="checkbox" name="relevantList" value="@item.Id" /> Relevant
                                     <input type="checkbox" name="irrelevantList" value="@item.Id" /> Irrelevant
                                 </td>
-                                <td> @Html.DisplayFor(modelItem => item.relevant)</td>
 
                             </tr>
 

@@ -13,6 +13,7 @@ namespace searcher.Models {
         public double[] queryTF;
         public double[] queryTF_IDF;
         public double[] queryTFYear;
+        public double[] queryTFTitle;
 
         public List<Article> doList(List<string> searchWords) {
             string query = "";
@@ -34,6 +35,7 @@ namespace searcher.Models {
             foreach (Article art in articles) {
                 countTermsFrequencies(art, searchWords);
                 countYearFrequencies(art);
+                countTitleFrequencies(art, searchWords);
                 System.Diagnostics.Debug.WriteLine("doc TF: " + String.Join(", ", art.TF));
 
 
@@ -83,6 +85,7 @@ namespace searcher.Models {
             int numOfWords = Dictionary.dictionary.Count;
             queryTF = new double[numOfWords];
             queryTFYear = new double[numOfWords];
+            queryTFTitle = new double[numOfWords];
 
             for (int i = 0; i < numOfWords; i++)
                 queryTF[i] = 0f;
@@ -103,6 +106,7 @@ namespace searcher.Models {
             for (int i = 0; i < queryTF.Length; i++)
             {
                 queryTFYear[i] = queryTF[i];
+                queryTFTitle[i] = queryTF[i];
             }
         }
 
@@ -119,6 +123,34 @@ namespace searcher.Models {
                     article.TFYear[i] *= ((double)sub/20);
                 }
             
+        }
+
+        private void countTitleFrequencies(Article article, List<string> searchWords)
+        {
+            article.TFTitle = new double[article.TF.Length];
+            for (int i = 0; i < article.TF.Length; i++)
+            {
+                article.TFTitle[i] = article.TF[i];
+            }
+            int count = 1;
+            TokenizeStopStem title = new TokenizeStopStem(article.title);
+            title.tokenize();
+            List<string> t = title.getTokens();
+            foreach(var item in t)
+            {
+                foreach(string s in searchWords)
+                {
+                    if(item.Equals(s))
+                    {
+                        count++;
+                    }
+                }
+            }
+            for (int i = 0; i < article.TFTitle.Length; i++)
+            {
+                article.TFTitle[i] *= (1/(double)count);
+            }
+
         }
         public void countTF_IDF(List<string> searchWords) {
             int numOfWords = Dictionary.dictionary.Count;
@@ -317,7 +349,7 @@ namespace searcher.Models {
                     }
                 }
             }
-            else if (MarkValue == "YEAR")
+            else if (MarkValue == "TITLE")
             {
                 for (int i = 0; i < queryTFYear.Length; i++)
                 {
@@ -332,18 +364,18 @@ namespace searcher.Models {
                     if (article.relevant)
                     {
                         rel++;
-                        valueRel = new double[article.TFYear.Length];
+                        valueRel = new double[article.TFTitle.Length];
                         for (int i = 0; i < valueRel.Length; i++)
                         {
                             valueRel[i] = 0f;
                         }
 
-                        for (int i = 0; i < article.TFYear.Length; i++)
+                        for (int i = 0; i < article.TFTitle.Length; i++)
                         {
-                            valueRel[i] += article.TFYear[i];
+                            valueRel[i] += article.TFTitle[i];
                         }
 
-                        for (int i = 0; i < queryTFYear.Length; i++)
+                        for (int i = 0; i < queryTFTitle.Length; i++)
                         {
                             queryTF[i] += (beta * (valueRel[i] / rel));
                         }
@@ -351,20 +383,20 @@ namespace searcher.Models {
                     if (article.irrelevant)
                     {
                         irrel++;
-                        valueIrrel = new double[article.TFYear.Length];
+                        valueIrrel = new double[article.TFTitle.Length];
                         for (int i = 0; i < valueIrrel.Length; i++)
                         {
                             valueIrrel[i] = 0f;
                         }
 
-                        for (int i = 0; i < article.TFYear.Length; i++)
+                        for (int i = 0; i < article.TFTitle.Length; i++)
                         {
-                            valueIrrel[i] += article.TFYear[i];
+                            valueIrrel[i] += article.TFTitle[i];
                         }
 
-                        for (int i = 0; i < queryTFYear.Length; i++)
+                        for (int i = 0; i < queryTFTitle.Length; i++)
                         {
-                            queryTFYear[i] -= (gamma * (valueIrrel[i] / irrel));
+                            queryTF[i] -= (gamma * (valueIrrel[i] / irrel));
                             if (queryTF[i] < 0f)
                             {
                                 queryTF[i] = 0f;
@@ -416,25 +448,16 @@ namespace searcher.Models {
                         }
                     }
                 }
-            } else if (MarkValue == "IDF") {
+            } else if (MarkValue == "TITLE") {
                 foreach (var d in Dictionary.dictionary) {
                     for (int j = 0; j < searchWords.Count(); j++) {
                         if (d.Key.Equals(searchWords[j])) {
-                            queryTF_IDF[d.Value] *= (weights[j] / (double)sum);
+                            queryTF[d.Value] *= (weights[j] / (double)sum);
                         }
                     }
 
                 }
-            } else if (MarkValue == "YEAR") {
-                foreach (var d in Dictionary.dictionary) {
-                    for (int j = 0; j < searchWords.Count(); j++) {
-                        if (d.Key.Equals(searchWords[j])) {
-                            queryTFYear[d.Value] *= (weights[j] / (double)sum);
-                        }
-                    }
-
-                }
-            }
+            } 
         }
 
 
