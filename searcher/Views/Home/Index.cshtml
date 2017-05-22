@@ -9,6 +9,10 @@
 @using (Html.BeginForm())
 {
     <p>
+        Filename with data: @Html.TextBox("fileToIndex")
+        <input type="submit" name="command" value="Create index" />
+    </p>
+    <p>
         Find: @Html.TextBox("searchString")
         <input type="submit" value="Search" />
 
@@ -70,7 +74,7 @@
         Actual: @ViewBag.Support
     </p>
 
-                @if (Model != null) {
+                if (Model != null) {
                     <table class="table">
                         @foreach (var item in Model) {
                             <tr>
