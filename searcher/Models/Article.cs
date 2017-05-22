@@ -13,6 +13,7 @@ namespace searcher.Models {
         public string dateStr;
         public double[] TF;
         public double[] TF_IDF;
+        public double[] TFYear;
         public double relevance;
         public Author[] authors;
         public List<Author> authors2;
@@ -111,7 +112,25 @@ namespace searcher.Models {
                 qLength = Math.Sqrt(qLength);
                 aLength = Math.Sqrt(aLength);
                 relevance = r / (qLength * aLength);
+            } else if (MarkValue == "YEAR") {
+                int queryCount = Dictionary.dictionary.Count;
+                double r = 0f;
+                double qLength = 0f;
+                double aLength = 0f;
+                for (int i = 0; i < queryCount; i++) {
+                    r += (queryTF[i] * TFYear[i]);
+                    qLength += (queryTF[i] * queryTF[i]);
+                    aLength += (TFYear[i] * TFYear[i]);
+                }
+                if (qLength == 0f) {
+                    relevance = 0f;
+                    return;
+                }
+                qLength = Math.Sqrt(qLength);
+                aLength = Math.Sqrt(aLength);
+                relevance = r / (qLength * aLength);
             }
+
 
         }
     }

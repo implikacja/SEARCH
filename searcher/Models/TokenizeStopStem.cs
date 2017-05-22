@@ -48,12 +48,18 @@ namespace searcher.Models
             for (int i = 0; i < numOfSearchWords; i++)
                 tf[i] = 0f;
 
-            foreach (var d in dic) {
-                foreach (string token in tokens) {
-                    if (token.Equals(d.Key))
-                        tf[d.Value] += 1f;
+            foreach (string token in tokens) {
+                if (dic.ContainsKey(token)) {
+                    tf[dic[token]] += 1.0;
                 }
             }
+
+            //foreach (var d in dic) {
+            //    foreach (string token in tokens) {
+            //        if (token.Equals(d.Key))
+            //            tf[d.Value] += 1f;
+            //    }
+            //}
 
             double maxTF = tf.Max();
 
