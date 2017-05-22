@@ -219,7 +219,7 @@ namespace searcher.Models {
                 }
             } else if (MarkValue == "YEAR") {
                 for (int i = 0; i < queryTFYear.Length; i++) {
-                    queryTFYear[i] *= alfa;
+                    queryTF[i] *= alfa;
                 }
                 int rel = 0;
                 double[] valueRel;
@@ -238,7 +238,7 @@ namespace searcher.Models {
                         }
 
                         for (int i = 0; i < queryTFYear.Length; i++) {
-                            queryTFYear[i] += (beta * (valueRel[i] / rel));
+                            queryTF[i] += (beta * (valueRel[i] / rel));
                         }
                     }
                     if (article.irrelevant) {
@@ -253,9 +253,9 @@ namespace searcher.Models {
                         }
 
                         for (int i = 0; i < queryTFYear.Length; i++) {
-                            queryTFYear[i] -= (gamma * (valueIrrel[i] / irrel));
-                            if (queryTFYear[i] < 0f) {
-                                queryTFYear[i] = 0f;
+                            queryTF[i] -= (gamma * (valueIrrel[i] / irrel));
+                            if (queryTF[i] < 0f) {
+                                queryTF[i] = 0f;
                             }
                         }
                     }
@@ -412,7 +412,7 @@ namespace searcher.Models {
                     {
                         if (d.Key.Equals(searchWords[j]))
                         {
-                            queryTFYear[d.Value] *= (weights[j] / (double)sum);
+                            queryTF[d.Value] *= (weights[j] / (double)sum);
                         }
                     }
                 }
