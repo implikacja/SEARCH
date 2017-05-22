@@ -34,6 +34,11 @@ namespace searcher.Controllers {
 
                             break;
                         }
+                    case "YEAR":
+                        {
+                            x.countTermsFrequenciesQuery(t.getTokens());
+                            break;
+                        }
                     default: break;
                 }
 

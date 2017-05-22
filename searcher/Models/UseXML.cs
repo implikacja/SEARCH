@@ -12,6 +12,7 @@ namespace searcher.Models {
     class UseXML {
         public double[] queryTF;
         public double[] queryTF_IDF;
+        public double[] queryTFYear;
 
 
         public List<Article> doList(List<string> searchWords) {
@@ -32,6 +33,7 @@ namespace searcher.Models {
 
             foreach (Article art in articles) {
                 countTermsFrequencies(art, searchWords);
+                countYearFrequencies(art);
                 System.Diagnostics.Debug.WriteLine("doc TF: " + String.Join(", ", art.TF));
 
                 for (int i = 0; i < searchWords.Count; i++) {
@@ -70,6 +72,7 @@ namespace searcher.Models {
         public void countTermsFrequenciesQuery(List<string> searchWords) {
             int numOfWords = Dictionary.dictionary.Count;
             queryTF = new double[numOfWords];
+            queryTFYear = new double[numOfWords];
 
             for (int i = 0; i < numOfWords; i++)
                 queryTF[i] = 0f;
@@ -86,8 +89,27 @@ namespace searcher.Models {
             if (maxTF != 0)
                 for (int i = 0; i < numOfWords; i++)
                     queryTF[i] /= maxTF; // tokens.Count;
+
+            for (int i = 0; i < queryTF.Length; i++)
+            {
+                queryTFYear[i] = queryTF[i];
+            }
         }
 
+        private void countYearFrequencies(Article article)
+        {
+            article.TFYear = new double[article.TF.Length];
+            for (int i = 0; i < article.TF.Length; i++)
+            {
+                article.TFYear[i] = article.TF[i];
+            }
+            int sub = DateTime.Now.Year- article.date.Year+1;
+                for (int i = 0; i < article.TFYear.Length; i++)
+                {
+                    article.TFYear[i] *= ((double)sub/20);
+                }
+            
+        }
         public void countTF_IDF(List<string> searchWords) {
             int numOfWords = Dictionary.dictionary.Count;
             queryTF_IDF = new double[numOfWords];

@@ -13,6 +13,7 @@ namespace searcher.Models {
         public string dateStr;
         public double[] TF;
         public double[] TF_IDF;
+        public double[] TFYear;
         public double relevance;
         public Author[] authors;
         public List<Author> authors2;
@@ -61,57 +62,85 @@ namespace searcher.Models {
 
         public void createDate() {
             Int32 y, m, d;
+            y = 0;
+            m = 0;
+            d = 0;
             string s = dateStr;
 
-            System.Diagnostics.Debug.WriteLine(s);
-
-            m = int.Parse(s.Substring(0, s.IndexOf('/')));
-            s = s.Substring(s.IndexOf('/') + 1);
-            d = int.Parse(s.Substring(0, s.IndexOf('/')));
-            s = s.Substring(s.IndexOf('/') + 1);
-            y = int.Parse(s.Substring(0, 4));
-
-            System.Diagnostics.Debug.WriteLine(y + " " + m + " " + d);
+            System.Diagnostics.Debug.WriteLine("s" + s);
+            if (s.Contains('.'))
+            {
+                d = int.Parse(s.Substring(0, s.IndexOf('.')));
+                s = s.Substring(s.IndexOf('.') + 1);
+                m = int.Parse(s.Substring(0, s.IndexOf('.')));
+                s = s.Substring(s.IndexOf('.') + 1);
+                y = int.Parse(s.Substring(0, 4));
+            }
+            else if (s.Contains('/'))
+            {
+                m = int.Parse(s.Substring(0, s.IndexOf('/')));
+                s = s.Substring(s.IndexOf('/') + 1);
+                d = int.Parse(s.Substring(0, s.IndexOf('/')));
+                s = s.Substring(s.IndexOf('/') + 1);
+                y = int.Parse(s.Substring(0, 4));
+            }
 
             date = new DateTime(y, m, d);
         }
 
+        private void countYearFrequencies(Article article, int year, double alfa)
+        {
+            article.TFYear = article.TF;
+            if (article.date.Year < year)
+            {
+                for (int i = 0; i < article.TFYear.Length; i++)
+                {
+                    article.TFYear[i] *= alfa;
+                }
+            }
+        }
         public void CountRelevance(string MarkValue, double[] queryTF, double[] queryTF_IDF) {
-            if (MarkValue == "TF") {
-                int queryCount = Dictionary.dictionary.Count;
-                double r = 0f;
-                double qLength = 0f;
-                double aLength = 0f;
-                for (int i = 0; i < queryCount; i++) {
+            int queryCount = Dictionary.dictionary.Count;
+            double r = 0f;
+            double qLength = 0f;
+            double aLength = 0f;
+            if (MarkValue == "TF")
+            {
+                for (int i = 0; i < queryCount; i++)
+                {
                     r += (queryTF[i] * TF[i]);
                     qLength += (queryTF[i] * queryTF[i]);
                     aLength += (TF[i] * TF[i]);
                 }
-                if (qLength == 0f) {
-                    relevance = 0f;
-                    return;
-                }
-                qLength = Math.Sqrt(qLength);
-                aLength = Math.Sqrt(aLength);
-                relevance = r / (qLength * aLength);
-            } else if (MarkValue == "TF_IDF") {
-                int queryCount = Dictionary.dictionary.Count;
-                double r = 0f;
-                double qLength = 0f;
-                double aLength = 0f;
-                for (int i = 0; i < queryCount; i++) {
+
+            }
+            else if (MarkValue == "TF_IDF")
+            {
+                for (int i = 0; i < queryCount; i++)
+                {
                     r += (queryTF_IDF[i] * TF_IDF[i]);
                     qLength += (queryTF_IDF[i] * queryTF_IDF[i]);
                     aLength += (TF_IDF[i] * TF_IDF[i]);
                 }
-                if (qLength == 0f) {
-                    relevance = 0f;
-                    return;
-                }
-                qLength = Math.Sqrt(qLength);
-                aLength = Math.Sqrt(aLength);
-                relevance = r / (qLength * aLength);
+
             }
+            else if (MarkValue == "YEAR")//QueryTF == QueryYear
+            {
+                for (int i = 0; i < queryCount; i++)
+                {
+                    r += (queryTF[i] * TF[i]);
+                    qLength += (queryTF[i] * queryTF[i]);
+                    aLength += (TFYear[i] * TFYear[i]);
+                }
+            }
+            if (qLength == 0f)
+            {
+                relevance = 0f;
+                return;
+            }
+            qLength = Math.Sqrt(qLength);
+            aLength = Math.Sqrt(aLength);
+            relevance = r / (qLength * aLength);
 
         }
     }
