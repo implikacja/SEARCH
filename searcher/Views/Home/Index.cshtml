@@ -77,10 +77,9 @@
                     <table class="table">
                         @foreach (var item in Model) {
                             <tr>
-                                <td> @Html.DisplayFor(modelItem => item.Id) </td>
                                 <td> @item.date.ToString("d") </td>
-                                <td> @*@MvcHtmlString.Create(item.getAuthorsList().Replace(Environment.NewLine, "<br />"))*@ </td>
-                                <td> @Html.DisplayFor(modelItem => item.title) </td>
+                                <td> @MvcHtmlString.Create(item.getAuthorsListToShow().Replace(Environment.NewLine, "<br />")) </td>
+                                <td> <b> @Html.DisplayFor(modelItem => item.title) </b> </td>
                                 <td> @Html.DisplayFor(modelItem => item.description) </td>
                                 <td> @Html.DisplayFor(modelItem => item.relevance) </td>
                                 <td>

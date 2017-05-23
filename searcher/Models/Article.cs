@@ -16,8 +16,7 @@ namespace searcher.Models {
         public double[] TFYear;
         public double[] TFTitle;
         public double relevance;
-        public Author[] authors;
-        public List<Author> authors2;
+        public List<Author> authors;
         public int Id;
         private static int IdNumerator = 0;
         public bool relevant { get; set; }
@@ -28,7 +27,7 @@ namespace searcher.Models {
             this.title = "";
             this.description = "";
             this.date = DateTime.MinValue;
-            this.authors2 = new List<Author>();
+            this.authors = new List<Author>();
             this.dateStr = "00000000";
         }
 
@@ -40,17 +39,40 @@ namespace searcher.Models {
             this.title = "";
             this.description = "";
             this.date = DateTime.MinValue;
-            this.authors2 = new List<Author>();
+            this.authors = new List<Author>();
             this.dateStr = "00000000";
         }
 
-        public string getAuthorsList() {
+        public string getAuthorsListToShow() {
             string auth = "";
 
             foreach (Author a in authors)
                 auth += a.firstName + " " + a.lastName + Environment.NewLine + Environment.NewLine;
 
             return auth;
+
+        }
+
+        public string getAuthorsToIndex() {
+            string auth = "";
+
+            foreach (Author a in authors)
+                auth += a.firstName + "_" + a.lastName + ",";
+
+            return auth;
+        }
+
+        public void setAuthorsListFromIndex(string s) {
+            string firstName, lastName;
+            s += ";";
+
+            while (s.Contains('_')) {
+                firstName = s.Substring(0, s.IndexOf('_'));
+                s = s.Substring(s.IndexOf('_') + 1);
+                lastName = s.Substring(0, s.IndexOf(','));
+                s = s.Substring(s.IndexOf(',') + 1);
+                authors.Add(new Author(firstName, lastName));
+            }
         }
 
         public string getTFList() {

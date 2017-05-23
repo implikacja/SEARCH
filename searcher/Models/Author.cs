@@ -8,5 +8,14 @@ namespace searcher.Models {
 
         public string firstName;
         public string lastName;
+
+        public Author() {
+
+        }
+
+        public Author(string firstName, string lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
     }
 }

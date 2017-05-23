@@ -18,6 +18,7 @@ namespace searcher.Models {
         public static readonly String TITLE = "Title";
         public static readonly String DESCRIPTION = "Description";
         public static readonly String DATE = "Date";
+        public static readonly String AUTHORS = "Authors";
 
         private static string _luceneDir = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, "lucene_index");
         private static FSDirectory _directoryTemp;
@@ -71,19 +72,28 @@ namespace searcher.Models {
 
                 article = new Article(false);
                 String value;
+
                 value = doc.GetField(ID).ToString();
                 value = cutDocString(value);
                 article.Id = int.Parse(value);
+
                 value = doc.GetField(DESCRIPTION).ToString();
                 value = cutDocString(value);
                 article.description = value;
+
                 value = doc.GetField(TITLE).ToString();
                 value = cutDocString(value);
                 article.title = value;
+
                 value = doc.GetField(DATE).ToString();
                 value = cutDocString(value);
                 article.dateStr = value;
                 article.createDate();
+
+                value = doc.GetField(AUTHORS).ToString();
+                value = cutDocString(value);
+                article.setAuthorsListFromIndex(value);
+
                 articles.Add(article);
             }
 
@@ -110,6 +120,7 @@ namespace searcher.Models {
             doc.Add(new Field(TITLE, article.title, Field.Store.YES, Field.Index.ANALYZED));
             doc.Add(new Field(DESCRIPTION, article.description, Field.Store.YES, Field.Index.ANALYZED));
             doc.Add(new Field(DATE, article.date.ToString(), Field.Store.YES, Field.Index.ANALYZED));
+            doc.Add(new Field(AUTHORS, article.getAuthorsToIndex(), Field.Store.YES, Field.Index.ANALYZED));
 
             // add entry to index
             writer.AddDocument(doc);

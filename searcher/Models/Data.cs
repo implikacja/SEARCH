@@ -88,7 +88,7 @@ namespace searcher.Models {
                                     xmlReader.Read();
                                 }
 
-                                article.authors2.Add(author);
+                                article.authors.Add(author);
                             }
                             xmlReader.Read();
                         }
