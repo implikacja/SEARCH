@@ -45,9 +45,16 @@ namespace searcher.Models {
                 }
             }
 
+            double ratio;
             for (int i = 0; i < numOfWords; i++) {
-                if (searchWordsCount[i] >= 1)
-                    IDF[i] = Math.Log10((double)articles.Count / searchWordsCount[i]);
+                if (searchWordsCount[i] >= 1) {
+                    ratio = (double)articles.Count / searchWordsCount[i];
+                    if (ratio == 1) {
+                        IDF[i] = 0.02;
+                    } else {
+                        IDF[i] = Math.Log10(ratio);
+                    }
+                }
             }
 
             System.Diagnostics.Debug.WriteLine("--------------------------");
