@@ -114,23 +114,5 @@ namespace searcher.Models {
             // add entry to index
             writer.AddDocument(doc);
         }
-
-        private static Article _mapLuceneDocumentToData(Document doc) {
-            return new Article {
-                Id = Convert.ToInt32(doc.Get("Id")),
-                title = doc.Get("Name"),
-                description = doc.Get("Description"),
-                dateStr = doc.Get("Date")
-            };
-        }
-
-        private static IEnumerable<Article> _mapLuceneToDataList(IEnumerable<Document> hits) {
-            return hits.Select(_mapLuceneDocumentToData).ToList();
-        }
-
-        private static IEnumerable<Article> _mapLuceneToDataList(IEnumerable<ScoreDoc> hits, IndexSearcher searcher) {
-            return hits.Select(hit => _mapLuceneDocumentToData(searcher.Doc(hit.Doc))).ToList();
-        }
-
     }
 }

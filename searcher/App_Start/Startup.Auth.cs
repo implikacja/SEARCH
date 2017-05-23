@@ -58,10 +58,6 @@ namespace searcher {
             //    ClientId = "",
             //    ClientSecret = ""
             //});
-
-            //Data.load();
-            //Dictionary.buildDictionary(Data.articles);
-            //Dictionary.saveDictionary();
         }
     }
 }

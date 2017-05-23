@@ -15,7 +15,6 @@ namespace searcher.Controllers {
                 TokenizeStopStem t = new TokenizeStopStem(searchString);
                 t.tokenize();
                 string result = t.getTokensList();
-                //String result = t.tokenization();
                 ViewBag.Message = result;
                 ViewBag.Terms = t.getTokens();
 

@@ -54,13 +54,6 @@ namespace searcher.Models
                 }
             }
 
-            //foreach (var d in dic) {
-            //    foreach (string token in tokens) {
-            //        if (token.Equals(d.Key))
-            //            tf[d.Value] += 1f;
-            //    }
-            //}
-
             double maxTF = tf.Max();
 
             if (maxTF != 0)
@@ -68,29 +61,6 @@ namespace searcher.Models
                     tf[i] /= maxTF; // tokens.Count;
 
             return tf;
-        }
-
-        public String tokenization()
-        {
-            List<String> result = new List<String>();
-
-            TokenStream tokenStream = new StandardTokenizer(Lucene.Net.Util.Version.LUCENE_30, new StringReader(this.input));
-            tokenStream = new StopFilter(false,tokenStream, StandardAnalyzer.STOP_WORDS_SET);
-            tokenStream = new PorterStemFilter(tokenStream);
-
-
-            StringBuilder sb = new StringBuilder();
-
-            var termAttr = tokenStream.GetAttribute<Lucene.Net.Analysis.Tokenattributes.ITermAttribute>();
-
-            while (tokenStream.IncrementToken())
-            {
-                sb.Append(termAttr.Term);
-                sb.Append(" ");
-            }
-
-            return sb.ToString();
-
         }
     }
 }
