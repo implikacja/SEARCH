@@ -22,6 +22,7 @@ namespace searcher.Models {
             }
 
             List<Article> articles = SearchIndex.FindArticles(query);
+            Dictionary.buildDictionary2(articles);
 
             int numOfWords = Dictionary.dictionary.Count;
             int[] searchWordsCount = new int[numOfWords];
@@ -37,7 +38,6 @@ namespace searcher.Models {
                 countYearFrequencies(art);
                 countTitleFrequencies(art, searchWords);
                 System.Diagnostics.Debug.WriteLine("doc TF: " + String.Join(", ", art.TF));
-
 
                 for (int i = 0; i < numOfWords; i++) {
                     if (art.TF[i] > 0)

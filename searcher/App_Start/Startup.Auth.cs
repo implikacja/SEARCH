@@ -59,9 +59,9 @@ namespace searcher {
             //    ClientSecret = ""
             //});
 
-            Data.load();
-            Dictionary.buildDictionary(Data.articles);
-            Dictionary.saveDictionary();
+            //Data.load();
+            //Dictionary.buildDictionary(Data.articles);
+            //Dictionary.saveDictionary();
         }
     }
 }
