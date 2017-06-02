@@ -66,8 +66,54 @@ namespace searcher.Controllers {
                 foreach (var a in articles) {
                     a.CountRelevance(MarkValue, x.queryTF, x.queryTF_IDF);
                 }
+
+                var tokens = t.getTokens();
+                if (SupportValue == "Weighted terms") {
+                    // statystyka
+
+                    foreach (string tok in tokens) {
+                        if (Dictionary.dictionary.ContainsKey(tok)) {
+                            foreach (Article a in articles) {
+                                a.TFTermposition.Add(tok, 0);
+                            }
+
+                            int dicTermPos = Dictionary.dictionary[tok];
+
+                            articles.Sort((b, a) => a.TF[dicTermPos].CompareTo(b.TF[dicTermPos]));
+                            for (int i = 0; i < articles.Count; i++) {
+                                articles[i].TFTermposition[tok] = i;
+                            }
+                        }
+                    }
+                }
+
                 articles.Sort((a, b) => a.relevance.CompareTo(b.relevance));
                 articles.Reverse();
+
+                if (SupportValue == "Weighted terms") {
+                    var change = new Dictionary<string, double>();
+                    double measure;
+                    double val;
+                    foreach (string tok in tokens) {
+                        if (Dictionary.dictionary.ContainsKey(tok)) {
+                            measure = 0.0;
+                            for (int i = 0; i < articles.Count; i++) {
+                                val = (double)(articles[i].TFTermposition[tok] - i + 1);
+                                val = (val > 0 ? val : -val);
+                                if (val != 0.0)
+                                    measure += (1.0 / val);
+                                System.Diagnostics.Debug.Write(tok + ": " + measure);
+                            }
+                            measure /= articles.Count;
+                            change.Add(tok, measure);
+                        } else {
+                            change.Add(tok, 0.0);
+                        }
+                    }
+
+                    ViewBag.Change = change;
+                }
+
                 return View(articles);
             }
 

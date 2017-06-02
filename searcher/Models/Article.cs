@@ -21,6 +21,7 @@ namespace searcher.Models {
         private static int IdNumerator = 0;
         public bool relevant { get; set; }
         public bool irrelevant { get; set; }
+        public Dictionary<string, int> TFTermposition = new Dictionary<string, int>();
 
         public Article() {
             this.Id = 0;
@@ -50,7 +51,6 @@ namespace searcher.Models {
                 auth += a.firstName + " " + a.lastName + Environment.NewLine + Environment.NewLine;
 
             return auth;
-
         }
 
         public string getAuthorsToIndex() {

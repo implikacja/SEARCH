@@ -53,6 +53,9 @@
     }, "Value", "Text");
                             }
                             @Html.DropDownList("intList", intList)
+                            @if (ViewBag.Change != null) {
+                                @ViewBag.Change[term]
+                            }
                         </li>
                                 }
                 </ul>
