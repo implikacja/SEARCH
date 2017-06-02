@@ -105,6 +105,7 @@ namespace searcher.Controllers {
                                 System.Diagnostics.Debug.Write(tok + ": " + measure);
                             }
                             measure /= articles.Count;
+                            measure = Math.Round(measure, 3);
                             change.Add(tok, measure);
                         } else {
                             change.Add(tok, 0.0);
@@ -113,6 +114,9 @@ namespace searcher.Controllers {
 
                     ViewBag.Change = change;
                 }
+
+                foreach (Article a in articles)
+                    a.relevance = Math.Round(a.relevance, 3);
 
                 return View(articles);
             }
